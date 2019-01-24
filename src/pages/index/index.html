@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>test</title>
+    <style type="text/css">
+        .demo-list__entry {
+            font-size: .18rem;
+            padding: .36rem .30rem;
+            list-style: none;
+        }
+        .demo-list__entry li{
+            margin-bottom: .05rem;
+            font-size: .20rem;
+        }
+        .demo-list__entry a {
+            font-size: inherit;
+            color: inherit;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<section id="base-panel__window">
+    <!--头部-->
+    <title-header :config="{title: '首页'}"></title-header>
+
+    <!--内容区域-->
+    <section class="base-panel__content">
+        <ul class="demo-list__entry">
+            <li v-for="(item, idx) in menus"
+                :key="idx">
+                <a :href="baseUri + item.uri">
+                    {{item.name}}
+                </a>
+            </li>
+        </ul>
+    </section>
+</section>
+</body>
+</html>

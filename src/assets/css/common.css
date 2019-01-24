@@ -1,0 +1,77 @@
+@charset "UTF-8";
+//共用变量集合
+$static-header-height: .60rem; // 公用二级头样式
+
+//公用方法集合
+@mixin els(){ // 超出部分省略号
+  white-space:nowrap; text-overflow:ellipsis;  overflow:hidden;
+}
+@mixin clear(){ // 清除浮动
+  *zoom: 1;
+  &:after{content: "";display: table;clear: both;}
+}
+@mixin ofh(){ // 触发BFC清除浮动
+  overflow: hidden;
+}
+@mixin blockPadding(){ //区块左右边距
+  padding-left: .30rem;
+  padding-right: .30rem;
+}
+
+//基础共用样式:一屏宽高的页面容器
+html, body, #base-panel__window{
+  font-family: 'Microsoft YaHei UI', '苹方 常规';
+  font-size: .18rem;
+
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+#base-panel__window{
+  position: relative;
+  z-index: 1;
+  .base-panel__content{
+    position: absolute;
+    z-index: 1;
+    top: $static-header-height;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+  }
+}
+
+//公用组件样式
+.component-header__static{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+
+  height: $static-header-height;
+  border-bottom: 1px solid #f2f2f2;
+
+  @include clear();
+  //头部返回按钮和右侧可变化的更多搜索按钮占位
+  .header-icon__back,
+  .header-icon__changable{
+    width: .75rem;
+    height: $static-header-height;
+    background: #e8e8e8;
+  }
+  .header-icon__back{
+    float: left;
+  }
+  .header-icon__changable{
+    float: right;
+  }
+  //头部标题
+  .header-title__txt{
+    text-align: center;
+    line-height: $static-header-height;
+    font-size: .18rem;
+    font-weight: bold;
+    color: #000000;
+  }
+}
