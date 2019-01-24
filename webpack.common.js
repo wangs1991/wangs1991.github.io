@@ -1,7 +1,10 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const StylelintWebpackPlugin = require('stylelint-webpack-plugin')
 const webpack = require('webpack')
 const pages = require('./src/map') // 多页面配置新数据
+/*const marked = require("marked")
+const renderer = new marked.Renderer()*/
 
 module.exports = {
     entry: (function () {
@@ -11,7 +14,9 @@ module.exports = {
         let chunk
 
         // 根据页面数据遍历出入口的集合
-        pages.forEach(n => {
+        pages.filter(n => {
+            return !!n.script
+        }).forEach(n => {
             chunk = n.uri.split('.')[0]
 
             ret[chunk] = __dirname + '/src/pages/' + chunk + '/' + chunk + '.js'
@@ -37,11 +42,10 @@ module.exports = {
         ...(function () { // 匿名自执行方法遍历页面数据，生成到模块的html文件到dist/html/[name]/name.html
             let ret = []
             let folder
+            // let exec = /\.html/
 
             pages.forEach(n => {
                 folder = n.uri.split('.')[0]
-
-                console.log(n)
 
                 ret.push(new HtmlWebpackPlugin({
                     filename: __dirname + '/dist/html/' + n.uri,
@@ -57,10 +61,28 @@ module.exports = {
             })
 
             return ret
-        })()
+        })(),
+        new StylelintWebpackPlugin({
+            context: 'src',
+            configFile: path.resolve(__dirname,'.stylelintrc'),
+            failOnError: true,
+            lintDirtyModulesOnly: true,
+            syntax: 'css'
+        })
     ],
     module: {
         rules: [
+            {
+                test: /\.md$/,
+                use: [
+                    {
+                        loader: "html-loader"
+                    },
+                    {
+                        loader: "markdown-loader"
+                    }
+                ]
+            },
             {
                 test: /\.js$/,
                 loader: 'babel-loader',

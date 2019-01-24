@@ -1,0 +1,14 @@
+.demo-list__entry {
+    font-size: .22rem;
+    padding: .36rem .30rem;
+    list-style: none;
+    li{
+        margin-bottom: .05rem;
+        font-size: .22rem;
+    }
+    a {
+        font-size: inherit;
+        color: inherit;
+        text-decoration: none;
+    }
+}

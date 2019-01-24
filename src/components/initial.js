@@ -1,5 +1,6 @@
 // 每个模块都会用的样式
 require('../assets/css/reset.css')
+require('../assets/css/github.css')
 require('../assets/css/common.css')
 
 // 公用的脚本

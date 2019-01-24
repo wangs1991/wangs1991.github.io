@@ -1,7 +1,9 @@
 module.exports = [{
-    name: '商品详情页',
-    uri: 'product.html'
+	script: true,
+    name: 'html文档',
+    uri: 'html.html'
 }, {
-    name: 'Listener 发布订阅者模式',
-    uri: 'listener.html'
+	script: true,
+    name: 'markdown文档',
+    uri: 'markdown.html'
 }]

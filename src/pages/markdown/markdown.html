@@ -12,17 +12,9 @@
     <!--头部-->
     <title-header :config="{title: '首页'}"></title-header>
 
-    <!--内容区域-->
-    <section class="base-panel__content">
-        <ul class="demo-list__entry">
-            <li v-for="(item, idx) in menus"
-                :key="idx">
-                <a :href="baseUri + item.uri">
-                    {{item.name}}
-                </a>
-            </li>
-        </ul>
-    </section>
+    <article class="base-panel__content product-panel__content">
+        <div class="markdown-format" v-html="html"></div>
+    </article>
 </section>
 </body>
 </html>
