@@ -3,7 +3,7 @@ import init from '../../components/initial'
 import '../../components/titleHeader'
 
 const vue = init()
-const __BASEURI = './html/'
+const __BASEURI = './dist/html/'
 
 const app = new vue({
     el: '#base-panel__window',
