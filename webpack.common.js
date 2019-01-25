@@ -34,7 +34,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            filename: __dirname + '/dist/index.html', // 生成html到指定位置
+            filename: __dirname + '../index.html', // 生成html到指定位置
             template: __dirname + "/src/pages/index/index.html", // 模板文件
             title: 'web-utils examples',
             chunks: ['common', 'app'],
@@ -99,7 +99,11 @@ module.exports = {
                 options: {
                     limit: 10000,
                     name: function () {
-                        return path.posix.join('/', 'assets/images/[name].[hash:7].[ext]')
+                        if (process.env.NODE_ENV === 'production') {
+                            return '/assets/images/[name].[hash:7].[ext]'
+                        } else {
+                            return '/assets/images/[name].[hash:7].[ext]'
+                        }
                     }
                 }
             },
@@ -109,12 +113,11 @@ module.exports = {
                 options: {
                     limit: 10000,
                     name: function () {
-                        return path.posix.join('/', 'assets/fonts/[name].[hash:7].[ext]')
-                        /*if (process.env.NODE_ENV === 'production') {
+                        if (process.env.NODE_ENV === 'production') {
                             return '/assets/fonts/[name].[hash:7].[ext]'
                         } else {
                             return '/assets/fonts/[name].[hash:7].[ext]'
-                        }*/
+                        }
                     }
                 }
             }

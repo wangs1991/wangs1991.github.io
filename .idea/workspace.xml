@@ -2,19 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="129e91e8-039e-41f7-ae7f-ccd5cf3bc56f" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/css/app.ff998191ebf443b154ba.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/css/common.ff998191ebf443b154ba.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/js/about.ff998191ebf443b154ba.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/js/app.ff998191ebf443b154ba.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/js/common.ff998191ebf443b154ba.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/js/html.ff998191ebf443b154ba.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/js/markdown.ff998191ebf443b154ba.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dist/assets/images/avator.7acffb3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/css/app.6385d9127f2122a8d08a.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/css/common.6385d9127f2122a8d08a.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/images/avator.7acffb3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/js/about.6385d9127f2122a8d08a.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/js/app.6385d9127f2122a8d08a.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/js/common.6385d9127f2122a8d08a.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/js/html.6385d9127f2122a8d08a.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/js/markdown.6385d9127f2122a8d08a.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/static/labels.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/html/about.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/html/html.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/html/markdown.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/index.html" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/html/about.html" afterPath="$PROJECT_DIR$/dist/html/about.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/html/html.html" afterPath="$PROJECT_DIR$/dist/html/html.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/html/markdown.html" afterPath="$PROJECT_DIR$/dist/html/markdown.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/index.html" afterPath="$PROJECT_DIR$/dist/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack.common.js" afterPath="$PROJECT_DIR$/webpack.common.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack.dev.js" afterPath="$PROJECT_DIR$/webpack.dev.js" />
@@ -150,41 +151,11 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="webpack.common.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="webpack.common.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/webpack.common.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="175">
-                  <caret line="103" column="17" lean-forward="false" selection-start-line="103" selection-start-column="17" selection-end-line="103" selection-end-column="17" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/index.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="275">
-                  <caret line="0" column="1051" lean-forward="true" selection-start-line="0" selection-start-column="1051" selection-end-line="0" selection-end-column="1051" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/dist/index.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="275">
-                  <caret line="0" column="1013" lean-forward="false" selection-start-line="0" selection-start-column="1012" selection-end-line="0" selection-end-column="1013" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="html.html" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/dist/html/html.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="225">
-                  <caret line="0" column="875" lean-forward="false" selection-start-line="0" selection-start-column="875" selection-end-line="0" selection-end-column="875" />
+                <state relative-caret-position="304">
+                  <caret line="36" column="37" lean-forward="false" selection-start-line="36" selection-start-column="37" selection-end-line="36" selection-end-column="37" />
                   <folding />
                 </state>
               </provider>
@@ -203,8 +174,8 @@
           <file leaf-file-name="webpack.prod.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/webpack.prod.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="123">
-                  <caret line="58" column="14" lean-forward="false" selection-start-line="56" selection-start-column="12" selection-end-line="58" selection-end-column="14" />
+                <state relative-caret-position="275">
+                  <caret line="20" column="32" lean-forward="false" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
                   <folding />
                 </state>
               </provider>
@@ -235,8 +206,8 @@
           <file leaf-file-name="webpack.dev.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/webpack.dev.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="475">
-                  <caret line="19" column="16" lean-forward="false" selection-start-line="19" selection-start-column="16" selection-end-line="20" selection-end-column="13" />
+                <state relative-caret-position="525">
+                  <caret line="21" column="31" lean-forward="false" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
                   <folding />
                 </state>
               </provider>
@@ -253,6 +224,8 @@
       <find>add_</find>
       <find>base-panel__content</find>
       <find>avator</find>
+      <find>__dirname</find>
+      <find>dist</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -287,10 +260,10 @@
         <option value="$PROJECT_DIR$/src/components/titleHeader.js" />
         <option value="$PROJECT_DIR$/dist/assets/css/common.c9bc4aaa6fa252fde62a.css" />
         <option value="$PROJECT_DIR$/src/assets/js/Utils.js" />
-        <option value="$PROJECT_DIR$/webpack.prod.js" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/webpack.common.js" />
+        <option value="$PROJECT_DIR$/webpack.prod.js" />
         <option value="$PROJECT_DIR$/webpack.dev.js" />
+        <option value="$PROJECT_DIR$/webpack.common.js" />
       </list>
     </option>
   </component>
@@ -342,17 +315,6 @@
             <path>
               <item name="wangs1991.github.io" type="b2602c69:ProjectViewProjectNode" />
               <item name="wangs1991.github.io" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wangs1991.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wangs1991.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="dist" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wangs1991.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wangs1991.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="dist" type="462c0819:PsiDirectoryNode" />
-              <item name="html" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -410,25 +372,24 @@
       <updated>1548302458332</updated>
       <workItem from="1548302459482" duration="19000" />
       <workItem from="1548321166070" duration="4770000" />
-      <workItem from="1548378756868" duration="20812000" />
+      <workItem from="1548378756868" duration="21834000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25601000" />
+    <option name="totallyTimeSpent" value="26623000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1929" y="-9" width="1938" height="1060" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14957717" sideWeight="0.49622437" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14957717" sideWeight="0.49622437" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901832" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25458467" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25350595" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5037756" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -817,34 +778,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webpack.prod.js">
+    <entry file="file://$PROJECT_DIR$/dist/html/html.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="58" column="14" lean-forward="false" selection-start-line="56" selection-start-column="12" selection-end-line="58" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webpack.common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="103" column="17" lean-forward="false" selection-start-line="103" selection-start-column="17" selection-end-line="103" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webpack.dev.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="19" column="16" lean-forward="false" selection-start-line="19" selection-start-column="16" selection-end-line="20" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="0" column="1051" lean-forward="true" selection-start-line="0" selection-start-column="1051" selection-end-line="0" selection-end-column="1051" />
+        <state relative-caret-position="225">
+          <caret line="0" column="861" lean-forward="false" selection-start-line="0" selection-start-column="861" selection-end-line="0" selection-end-column="861" />
           <folding />
         </state>
       </provider>
@@ -852,15 +789,47 @@
     <entry file="file://$PROJECT_DIR$/dist/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
-          <caret line="0" column="1013" lean-forward="false" selection-start-line="0" selection-start-column="1012" selection-end-line="0" selection-end-column="1013" />
+          <caret line="0" column="1020" lean-forward="false" selection-start-line="0" selection-start-column="1020" selection-end-line="0" selection-end-column="1020" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/html/html.html">
+    <entry file="file://$PROJECT_DIR$/dist/assets/css/common.6385d9127f2122a8d08a.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="0" column="875" lean-forward="false" selection-start-line="0" selection-start-column="875" selection-end-line="0" selection-end-column="875" />
+        <state relative-caret-position="443">
+          <caret line="0" column="22303" lean-forward="false" selection-start-line="0" selection-start-column="22303" selection-end-line="0" selection-end-column="22303" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="0" column="1025" lean-forward="false" selection-start-line="0" selection-start-column="1025" selection-end-line="0" selection-end-column="1025" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack.prod.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="20" column="32" lean-forward="false" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack.dev.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="21" column="31" lean-forward="false" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack.common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="36" column="37" lean-forward="false" selection-start-line="36" selection-start-column="37" selection-end-line="36" selection-end-column="37" />
           <folding />
         </state>
       </provider>
