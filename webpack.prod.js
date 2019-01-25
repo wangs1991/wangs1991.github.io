@@ -34,7 +34,8 @@ const config = merge(common, {
                         options: {importLoaders: 1},
                     },
                         'postcss-loader',
-                    ]
+                    ],
+                    publicPath: '../'
                 })
             }
         ]
