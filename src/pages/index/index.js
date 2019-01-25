@@ -1,5 +1,7 @@
 import menu from '../../map'
-import init from '../../components/initial'
+import Labels from '../../static/labels'
+import init from '../../assets/js/initial'
+import {serilizeUrl} from '../../assets/js/Utils'
 import '../../components/titleHeader'
 require('./index.css')
 
@@ -10,7 +12,16 @@ const __BASEURI = (function () {
     return window.location.href.match(tester) ? './dist/html/' : './html/'
 })()
 
-const app = new vue({
+const OjectLabels = (function (data) {
+    var ret = {}
+
+    data.forEach(n => {
+        ret[n.id] = n
+    })
+    return ret
+})(Labels)
+
+export default new vue({
     el: '#base-panel__window',
     name: 'entry',
     data () {
@@ -19,7 +30,32 @@ const app = new vue({
             baseUri: __BASEURI
         }
     },
+    methods: {
+        filterByKeyword (keyword) {
+            this.menus.filter(n => {
+                return n.keyword == keyword
+            })
+        }
+    },
     created () {
-        this.menus.splice(0, this.menus.length, ...menu)
+        let type = serilizeUrl(window.location.href, 0).type
+        let data
+
+        if (type && type != 0) {
+            data = menu.filter(n => {
+                return n.typeId == type
+            })
+        } else {
+            data = menu
+        }
+        data.forEach(n => {
+            n.labelColor = OjectLabels[n.typeId].color
+        })
+
+        this.menus.splice(0, this.menus.length, ...data)
+    },
+    mounted () {
+        // 移除加载过程隐藏所有元素
+        document.body.classList.remove('loading')
     }
 })

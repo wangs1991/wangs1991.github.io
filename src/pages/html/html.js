@@ -1,11 +1,11 @@
-import init from '../../components/initial'
+import init from '../../assets/js/initial'
 import '../../components/titleHeader'
 
 require('./html.css')
 
 const vue = init()
 
-const app = new vue({
+module.exports = new vue({
     el: '#base-panel__window',
     name: 'product',
     data () {
@@ -13,7 +13,11 @@ const app = new vue({
             header: {
                 title: '排版测试'
             },
-            icon: require('../../assets/images/icons/add_photo_icon.png')
+            icon: require('../../assets/images/add_photo_icon.png')
         }
+    },
+    mounted () {
+        // 移除加载过程隐藏所有元素
+        document.body.classList.remove('loading')
     }
 })

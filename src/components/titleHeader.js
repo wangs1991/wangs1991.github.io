@@ -1,13 +1,41 @@
 import Vue from 'vue/dist/vue'
+// 标签数据
+import Labels from '../static/labels'
+import {serilizeUrl} from '../assets/js/Utils'
 // 全局组件的注册与使用
 Vue.component('titleHeader', {
-    template: `<header class="component-header__static">
-                 <div class="header-icon__back" @click="goBack"></div>
-                 <div class="header-icon__changable"></div>
-                 <div class="header-title__txt">{{config.title}}</div>
-               </header>`,
+    template: `<section class="component-header">
+                    <header class="component-header__static">
+                     <a class="header-icon__left" 
+                        href="/">
+                        <div class="logo"></div>
+                     </a>
+                     <div class="header-icon__right">
+                        <a href="/" class="header-avator"></a>   
+                     </div>
+                     <!--<div class="header-title__txt">{{config.title}}</div>-->
+                    </header>
+                    <section class="scroller-labels">
+                        <div class="scroller-labels__panel" :style="scroller">
+                            <span class="label-item"
+                              :class="{active: item.id == active}"
+                              v-for="item in labels"
+                              v-if="item"
+                              @click="linkTo(item)"
+                              :key="item.id">
+                              {{item.label}}
+                        </span>
+                        </div>
+                    </section>
+                </section>`,
     data() {
-        return {}
+        return {
+            labels: [{
+                id: 0,
+                label: '全部'
+            }],
+            active: 0
+        }
     },
     props: {
         config: {
@@ -20,9 +48,29 @@ Vue.component('titleHeader', {
             }
         }
     },
-    methods: {
-        goBack() { // 顶部返回方法，尝试返回历史记录上一步，不存在返回首页
-            window.history.go(-1)
+    computed: {
+        scroller () {
+            let ret = 0
+
+            this.labels.forEach(n => {
+                if (n) {
+                    ret += (n.label.length + 1.4) * window.rem2px(0.26)
+                }
+            })
+
+            ret += this.labels.length * window.rem2px(0.30) + 'px'
+            return {
+                width: ret
+            }
         }
+    },
+    methods: {
+        linkTo (item) {
+            window.location.href = window.location.origin + '?type=' + item.id
+        }
+    },
+    mounted () {
+        this.labels.splice(1, 0, ...Labels)
+        this.active = serilizeUrl(window.location.href, 0).type
     }
 })

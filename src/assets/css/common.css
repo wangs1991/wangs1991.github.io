@@ -1,6 +1,13 @@
 @charset "UTF-8";
 //共用变量集合
-$static-header-height: .60rem; // 公用二级头样式
+$static-header-height: .95rem; // 公用二级头样式
+$comp-header-hegiht: 1.42rem;
+
+$theme-color-1: rgba(233, 30, 99, 1); // 粉色
+$theme-color-1-70: rgba(233, 30, 99, .70); // 粉色
+$theme-color-2: rgba(255, 203, 7, 1);; // 金色
+$theme-color-2-70: rgba(255, 203, 7, .70);; // 金色
+$theme-color-2-10: rgba(255, 203, 7, .10);; // 金色
 
 //公用方法集合
 @mixin els(){ // 超出部分省略号
@@ -14,26 +21,32 @@ $static-header-height: .60rem; // 公用二级头样式
   overflow: hidden;
 }
 @mixin blockPadding(){ //区块左右边距
-  padding-left: .30rem;
-  padding-right: .30rem;
+  padding-left: .15rem;
+  padding-right: .15rem;
 }
 
 //基础共用样式:一屏宽高的页面容器
 html, body, #base-panel__window{
-  font-family: 'Microsoft YaHei UI', '苹方 常规';
+  font-family: 'PingFang SC', 'Microsoft YaHei UI';
   font-size: .18rem;
 
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
+*{
+  text-shadow: 0 0 .01rem $theme-color-2-10;
+}
 #base-panel__window{
   position: relative;
   z-index: 1;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
   .base-panel__content{
     position: absolute;
     z-index: 1;
-    top: $static-header-height;
+    top: $comp-header-hegiht;
     left: 0;
     right: 0;
     bottom: 0;
@@ -42,36 +55,123 @@ html, body, #base-panel__window{
 }
 
 //公用组件样式
-.component-header__static{
+.component-header{
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   z-index: 10;
-
+}
+//头部样式
+.component-header__static{
   height: $static-header-height;
-  border-bottom: 1px solid #f2f2f2;
 
   @include clear();
   //头部返回按钮和右侧可变化的更多搜索按钮占位
-  .header-icon__back,
-  .header-icon__changable{
+  .header-icon__left,
+  .header-icon__right{
     width: .75rem;
     height: $static-header-height;
-    background: #e8e8e8;
+    //background: #e8e8e8;
   }
-  .header-icon__back{
+  .header-icon__left{
     float: left;
   }
-  .header-icon__changable{
+  .header-icon__right{
     float: right;
   }
   //头部标题
   .header-title__txt{
     text-align: center;
     line-height: $static-header-height;
-    font-size: .18rem;
-    font-weight: bold;
+    font-size: .24rem;
     color: #000000;
+  }
+}
+//滚动分类样式
+.scroller-labels{
+  padding-top: .12rem;
+  padding-bottom: .20rem;
+  line-height: 1.5em;
+  font-size: .26rem;
+  width: 100%;
+  overflow: auto;
+  //@include blockPadding();
+  .label-item{
+    display: inline-block;
+    line-height: 1.5em;
+    margin-left: .30rem;
+    color: #71777c;
+    cursor: pointer;
+    &:hover{
+      color: $theme-color-1-70;
+    }
+    &.active{
+      background: linear-gradient(to right bottom, $theme-color-1 45%, $theme-color-2);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+  }
+}
+
+//标签的样式
+.base-article__label{
+  display: inline-block;
+  color: #b2bac2;
+}
+.base-article__keyword{
+  font-size: inherit;
+  color: #b2bac2;
+}
+
+//logo
+.logo{
+  line-height: $static-header-height;
+  text-align: center;
+  transform: rotate(90deg);
+  &:before,
+  &:after {
+    content: '';
+    display: inline-block;
+    width: .30rem;
+    height: .30rem;
+    border-radius: .15rem;
+  }
+  &:before{
+    background: $theme-color-1-70;
+    margin-right: -.08rem;
+  }
+  &:after{
+    background: $theme-color-2-70;
+  }
+}
+
+//头像，关于我
+.header-avator{
+  display: block;
+  margin-top: .15rem;
+  margin-left: -.05rem;
+  width: .50rem;
+  height: .50rem;
+  border-radius: 50%;
+  border: .03rem solid $theme-color-2;
+  background: url('../../assets/images/avator.jpg') no-repeat center center;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+//加载过程什么都不显示
+.loading{
+  *{
+    opacity: 0;
+    filter: alpha(opacity=0)
+  }
+}
+//移动端query
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 750px) {
+  #base-panel__window{
+    max-width: 100%;
   }
 }

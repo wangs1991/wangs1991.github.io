@@ -1,9 +1,9 @@
-import init from '../../components/initial'
+import init from '../../assets/js/initial'
 import '../../components/titleHeader'
 
 const vue = init()
 
-const app = new vue({
+module.exports = new vue({
     el: '#base-panel__window',
     name: 'markdown',
     data () {
@@ -11,8 +11,11 @@ const app = new vue({
             header: {
                 title: '排版测试'
             },
-            icon: require('../../assets/images/icons/add_photo_icon.png'),
             html: require('./test.md')
         }
+    },
+    mounted () {
+        // 移除加载过程隐藏所有元素
+        document.body.classList.remove('loading')
     }
 })
