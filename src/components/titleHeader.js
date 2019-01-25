@@ -11,7 +11,7 @@ Vue.component('titleHeader', {
                         <div class="logo"></div>
                      </a>
                      <div class="header-icon__right">
-                        <a :href="uriRoot + '/about.html'" class="header-avator"></a>   
+                        <a :href="uriRoot + 'about.html'" class="header-avator"></a>   
                      </div>
                      <!--<div class="header-title__txt">{{config.title}}</div>-->
                     </header>
