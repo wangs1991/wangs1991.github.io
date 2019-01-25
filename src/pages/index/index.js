@@ -1,16 +1,12 @@
 import menu from '../../map'
 import Labels from '../../static/labels'
 import init from '../../assets/js/initial'
-import {serilizeUrl} from '../../assets/js/Utils'
+import {serilizeUrl, getUriRoot} from '../../assets/js/Utils'
 import '../../components/titleHeader'
 require('./index.css')
 
 const vue = init()
-const __BASEURI = (function () {
-    let tester = /github.io/
-
-    return window.location.href.match(tester) ? './dist/html/' : './html/'
-})()
+const __BASEURI = getUriRoot()
 
 const OjectLabels = (function (data) {
     var ret = {}

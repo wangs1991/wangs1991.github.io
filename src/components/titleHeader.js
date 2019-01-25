@@ -1,7 +1,7 @@
 import Vue from 'vue/dist/vue'
 // 标签数据
 import Labels from '../static/labels'
-import {serilizeUrl} from '../assets/js/Utils'
+import {serilizeUrl, getUriRoot} from '../assets/js/Utils'
 // 全局组件的注册与使用
 Vue.component('titleHeader', {
     template: `<section class="component-header">
@@ -11,7 +11,7 @@ Vue.component('titleHeader', {
                         <div class="logo"></div>
                      </a>
                      <div class="header-icon__right">
-                        <a href="/" class="header-avator"></a>   
+                        <a :href="uriRoot + '/about.html'" class="header-avator"></a>   
                      </div>
                      <!--<div class="header-title__txt">{{config.title}}</div>-->
                     </header>
@@ -40,7 +40,7 @@ Vue.component('titleHeader', {
     props: {
         config: {
             type: Object,
-            required: true,
+            required: false,
             default() {
                 return {
                     title: '文章详情'
@@ -62,6 +62,9 @@ Vue.component('titleHeader', {
             return {
                 width: ret
             }
+        },
+        uriRoot () {
+            return getUriRoot()
         }
     },
     methods: {

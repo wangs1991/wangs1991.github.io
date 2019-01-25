@@ -14,4 +14,11 @@ module.exports = [{
 	script: true,
     name: 'markdown文档',
     uri: 'markdown.html'
+}, {
+    typeId: 1000,
+    type: '功能测试',
+    keyword: '',
+    script: true,
+    name: '个人信息',
+    uri: 'about.html'
 }]

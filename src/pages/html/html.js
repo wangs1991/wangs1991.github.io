@@ -1,11 +1,9 @@
 import init from '../../assets/js/initial'
 import '../../components/titleHeader'
 
-require('./html.css')
-
 const vue = init()
 
-module.exports = new vue({
+export default new vue({
     el: '#base-panel__window',
     name: 'product',
     data () {

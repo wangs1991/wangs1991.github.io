@@ -5,13 +5,12 @@ const vue = init()
 
 export default new vue({
     el: '#base-panel__window',
-    name: 'markdown',
+    name: 'about',
     data () {
         return {
             header: {
-                title: '排版测试'
-            },
-            html: require('./test.md')
+                title: '个人信息-关于我们'
+            }
         }
     },
     mounted () {

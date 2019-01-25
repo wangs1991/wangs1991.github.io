@@ -62,6 +62,14 @@ html, body, #base-panel__window{
   right: 0;
   z-index: 10;
 }
+.pdtb{
+  padding-top: .30rem;
+  padding-bottom: .30rem;
+}
+.pdlr{
+  padding-left: .30rem;
+  padding-right: .30rem;
+}
 //头部样式
 .component-header__static{
   height: $static-header-height;
