@@ -16,5 +16,5 @@ export const serilizeUrl = (url, slot) => {
 export const getUriRoot = () => {
     let tester = /github.io/
 
-    return window.location.href.match(tester) ? './dist/html/' : './html/'
+    return window.location.href.match(tester) ? '/dist/html/' : '/html/'
 }

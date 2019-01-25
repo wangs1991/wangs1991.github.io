@@ -10,7 +10,7 @@ var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const common = require('./webpack.common')
 
 const config = merge(common, {
-    mode: 'development',
+    mode: 'production',
     optimization: {
         minimize: true,
         splitChunks: { // 代码分隔，公用的脚本到common.js
@@ -68,13 +68,6 @@ const config = merge(common, {
             {
                 from: path.resolve(__dirname, './src/static'),
                 to: 'assets/static',
-                ignore: ['.*']
-            }
-        ]),
-        new CopyWebpackPlugin([
-            {
-                from: path.resolve(__dirname, './src/assets/images/'),
-                to: 'assets/images',
                 ignore: ['.*']
             }
         ]),
