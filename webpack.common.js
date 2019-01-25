@@ -6,6 +6,10 @@ const pages = require('./src/map') // 多页面配置新数据
 /*const marked = require("marked")
 const renderer = new marked.Renderer()*/
 
+console.log('==============================================')
+console.log(process.env.NODE_ENV)
+console.log('==============================================')
+
 module.exports = {
     entry: (function () {
         let ret = {
@@ -95,7 +99,11 @@ module.exports = {
                 options: {
                     limit: 10000,
                     name: function () {
-                        return '/assets/images/[name].[hash:7].[ext]'
+                        if (process.env.NODE_ENV === 'production') {
+                            return '/dist/assets/images/[name].[hash:7].[ext]'
+                        } else {
+                            return '/assets/images/[name].[hash:7].[ext]'
+                        }
                     }
                 }
             },
@@ -112,7 +120,13 @@ module.exports = {
                 loader: 'url-loader',
                 options: {
                     limit: 10000,
-                    name: '/assets/fonts/[name].[hash:7].[ext]'
+                    name: function () {
+                        if (process.env.NODE_ENV === 'production') {
+                            return '/dist/assets/fonts/[name].[hash:7].[ext]'
+                        } else {
+                            return '/assets/fonts/[name].[hash:7].[ext]'
+                        }
+                    }
                 }
             }
         ]
