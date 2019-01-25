@@ -1,6 +1,8 @@
 import init from '../../assets/js/initial'
 import '../../components/titleHeader'
 
+require('./about.css')
+
 const vue = init()
 
 export default new vue({

@@ -35,7 +35,7 @@ const config = merge(common, {
                     },
                         'postcss-loader',
                     ],
-                    publicPath: '../'
+                    publicPath: '../../'
                 })
             }
         ]

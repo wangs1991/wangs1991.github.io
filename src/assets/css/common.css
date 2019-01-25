@@ -5,6 +5,7 @@ $comp-header-hegiht: 1.42rem;
 
 $theme-color-1: rgba(233, 30, 99, 1); // 粉色
 $theme-color-1-70: rgba(233, 30, 99, .70); // 粉色
+$theme-color-1-10: rgba(233, 30, 99, .10); // 粉色
 $theme-color-2: rgba(255, 203, 7, 1);; // 金色
 $theme-color-2-70: rgba(255, 203, 7, .70);; // 金色
 $theme-color-2-10: rgba(255, 203, 7, .10);; // 金色
@@ -147,7 +148,7 @@ html, body, #base-panel__window{
   }
   &:before{
     background: $theme-color-1-70;
-    margin-right: -.08rem;
+    margin-right: -.10rem;
   }
   &:after{
     background: $theme-color-2-70;

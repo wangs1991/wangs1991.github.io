@@ -1,6 +1,6 @@
 .demo-list__entry {
     font-size: .22rem;
-    padding: .36rem .30rem;
+    padding: 0 .30rem .36rem .30rem;
     list-style: none;
     li{
         margin-top: .25rem;
