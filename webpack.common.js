@@ -100,7 +100,7 @@ module.exports = {
                     limit: 10000,
                     name: function () {
                         if (process.env.NODE_ENV === 'production') {
-                            return '/dist/assets/images/[name].[hash:7].[ext]'
+                            return './assets/images/[name].[hash:7].[ext]'
                         } else {
                             return '/assets/images/[name].[hash:7].[ext]'
                         }
