@@ -2,26 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="129e91e8-039e-41f7-ae7f-ccd5cf3bc56f" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/css/about.224ed3a59110f4c75834.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/css/app.224ed3a59110f4c75834.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/css/common.224ed3a59110f4c75834.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/images/avator.7acffb3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/js/about.224ed3a59110f4c75834.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/js/app.224ed3a59110f4c75834.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/js/common.224ed3a59110f4c75834.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/js/h5capture.224ed3a59110f4c75834.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/js/html.224ed3a59110f4c75834.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/js/readme.224ed3a59110f4c75834.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/js/webpack-multipage.224ed3a59110f4c75834.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/static/labels.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/html/about.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/html/h5capture.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/html/html.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/html/readme.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/html/webpack-multipage.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/index.html" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/h5-capture/h5-capture.js" afterPath="$PROJECT_DIR$/src/pages/h5-capture/h5-capture.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack.prod.js" afterPath="$PROJECT_DIR$/webpack.prod.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -68,21 +50,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="webpack.prod.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="webpack.prod.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/webpack.prod.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="43" column="14" lean-forward="false" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
+            <state relative-caret-position="203">
+              <caret line="40" column="13" lean-forward="true" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="h5-capture.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="h5-capture.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/h5-capture/h5-capture.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="24" column="2" lean-forward="true" selection-start-line="24" selection-start-column="2" selection-end-line="24" selection-end-column="2" />
+            <state relative-caret-position="375">
+              <caret line="21" column="23" lean-forward="true" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
               </folding>
@@ -224,8 +206,8 @@
         <option value="$PROJECT_DIR$/src/pages/html/html.html" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/map.js" />
-        <option value="$PROJECT_DIR$/webpack.prod.js" />
         <option value="$PROJECT_DIR$/src/pages/h5-capture/h5-capture.js" />
+        <option value="$PROJECT_DIR$/webpack.prod.js" />
       </list>
     </option>
   </component>
@@ -357,12 +339,12 @@
       <workItem from="1548378756868" duration="23455000" />
       <workItem from="1548424686945" duration="1181000" />
       <workItem from="1548644354451" duration="5467000" />
-      <workItem from="1548655323959" duration="12078000" />
+      <workItem from="1548655323959" duration="12191000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46970000" />
+    <option name="totallyTimeSpent" value="47083000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1060" extended-state="6" />
@@ -661,7 +643,7 @@
         <state relative-caret-position="500">
           <caret line="20" column="6" lean-forward="false" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
           <folding>
-            <element signature="e#0#30#0" expanded="true" />
+            <element signature="e#0#30#0" expanded="false" />
             <marker date="1548665619416" expanded="true" signature="193:532" ph="..." />
             <marker date="1548665619416" expanded="true" signature="328:467" ph="..." />
           </folding>
@@ -847,21 +829,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webpack.prod.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="43" column="14" lean-forward="false" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/h5-capture/h5-capture.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="24" column="2" lean-forward="true" selection-start-line="24" selection-start-column="2" selection-end-line="24" selection-end-column="2" />
+        <state relative-caret-position="375">
+          <caret line="21" column="23" lean-forward="true" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack.prod.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="40" column="13" lean-forward="true" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
