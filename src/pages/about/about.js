@@ -1,6 +1,6 @@
 import init from '../../assets/js/initial'
 import '../../components/titleHeader'
-
+import '../../components/goTop'
 require('./about.css')
 
 const vue = init()

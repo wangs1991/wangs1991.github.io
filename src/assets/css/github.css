@@ -15,7 +15,9 @@ div.search-form .autocomplete-results a.selected, div.search-form .autocomplete-
     vertical-align: middle
 }
 
-
+.markdown-format{
+    font-size: 0.24rem;
+}
 
 .markdown-format h1, .markdown-format h2 {
     font-size: 36px;
@@ -312,7 +314,8 @@ div.search-form .autocomplete-results a.selected, div.search-form .autocomplete-
 .markdown-format code {
     font-family: Monaco, "DejaVu Sans Mono", "Courier New", monospace;
     font-size: 13px;
-    color: #666
+    color: #24292e;
+    background: rgba(27,31,35,.05);
 }
 
 .markdown-format code {
@@ -325,23 +328,18 @@ div.search-form .autocomplete-results a.selected, div.search-form .autocomplete-
 }
 
 .markdown-format pre {
-    padding: 8px 10px;
-    /*margin: 10px 0;
-    border: 1px solid #ddd;
-    border-bottom-width: 2px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
+    background-color: #f6f8fa;
     border-radius: 3px;
-    -moz-background-clip: padding;
-    -webkit-background-clip: padding-box;
-    background-clip: padding-box;
-    -webkit-font-smoothing: inherit;
-    overflow: auto*/
+    font-size: 85%;
+    line-height: 1.45;
+    overflow: auto;
+    padding: 16px;
 }
 
 .markdown-format pre code {
     padding: 0;
-    border: none
+    border: none;
+    background: transparent;
 }
 
 .markdown-format pre span {
@@ -1271,3 +1269,17 @@ h1.guide-title {
 .mega-octicon {
     font-size: 32px
 }
+
+/*
+code{
+    display: block;
+    background: #181818;
+    border-radius: .10rem;
+    margin-top: .15rem;
+    margin-bottom: .15rem;
+    padding: .30rem;
+    font-size: 100%;
+    color: #fff;
+    max-width: 100%;
+    overflow: auto;
+}*/

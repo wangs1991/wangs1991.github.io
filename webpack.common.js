@@ -3,8 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const StylelintWebpackPlugin = require('stylelint-webpack-plugin')
 const webpack = require('webpack')
 const pages = require('./src/map') // 多页面配置新数据
-/*const marked = require("marked")
-const renderer = new marked.Renderer()*/
+const Info = require('./src/config')
 
 console.log('==============================================')
 console.log(process.env.NODE_ENV)
@@ -36,7 +35,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: __dirname + '/dist/index.html', // 生成html到指定位置
             template: __dirname + "/src/pages/index/index.html", // 模板文件
-            title: 'web-utils examples',
+            title: Info.title,
             chunks: ['common', 'app'],
             minify: {
                 removeComments: true,//删除注释
@@ -54,6 +53,7 @@ module.exports = {
                 ret.push(new HtmlWebpackPlugin({
                     filename: __dirname + '/dist/html/' + n.uri,
                     template: __dirname + '/src/pages/' + folder + '/' + n.uri,
+                    title: Info.title,
                     chunks: ['common', folder],
                     minify:
                         {

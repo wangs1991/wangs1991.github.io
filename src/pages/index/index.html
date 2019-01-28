@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>test</title>
+    <title>${htmlWebpackPlugin.options.title}</title>
 </head>
 <body  class="loading">
 <section id="base-panel__window">
@@ -13,7 +13,7 @@
     <title-header></title-header>
 
     <!--内容区域-->
-    <section class="base-panel__content pdtb">
+    <section class="base-panel__content" id="scrollerPanel">
         <ul class="demo-list__entry">
             <li v-for="(item, idx) in menus"
                 :key="idx">
@@ -23,11 +23,16 @@
                 <div class="item-info">
                     <span class="base-article__label"
                           :style="{color: item.labelColor}">{{item.type}}</span>
-                    <span class="base-article__keyword" @click="filterByKeyword(item.keyword)">{{item.keyword}}</span>
+                    <span class="base-article__date">{{item.date}}</span>
+                    <span class="base-article__keyword"
+                          :key="idx"
+                          v-for="(kword, idx) in item.keywords">{{kword}}</span>
                 </div>
             </li>
         </ul>
     </section>
+
+    <back-top></back-top>
 </section>
 </body>
 </html>

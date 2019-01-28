@@ -1,5 +1,7 @@
 import init from '../../assets/js/initial'
-import '../../components/titleHeader'
+import {getArticleInfo} from '../../assets/js/Utils'
+import '../../components/ArticleRead'
+import articles from '../../map'
 
 const vue = init()
 
@@ -8,10 +10,12 @@ export default new vue({
     name: 'markdown',
     data () {
         return {
-            header: {
-                title: '排版测试'
-            },
-            html: require('./test.md')
+            html: require('./h5capture.md')
+        }
+    },
+    computed: {
+        title () {
+            return getArticleInfo(window.location.href, articles)[0]
         }
     },
     mounted () {

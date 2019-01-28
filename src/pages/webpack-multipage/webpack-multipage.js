@@ -1,19 +1,16 @@
 import init from '../../assets/js/initial'
 import {getArticleInfo} from '../../assets/js/Utils'
-import '../../components/ArticleRead'
 import articles from '../../map'
+import '../../components/ArticleRead'
 
 const vue = init()
 
 export default new vue({
     el: '#base-panel__window',
-    name: 'product',
+    name: 'markdown',
     data () {
         return {
-            header: {
-                title: '排版测试'
-            },
-            icon: require('../../assets/images/add_photo_icon.png')
+            html: require('./webpack-multipage.md')
         }
     },
     computed: {

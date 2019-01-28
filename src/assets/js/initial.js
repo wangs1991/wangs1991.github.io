@@ -7,6 +7,8 @@ require('../css/common.css')
 import mobileAdapt from './mobileAdapt'
 import vue from 'vue/dist/vue'
 
+// import '../../components/goTop'
+
 export default () => {
     // 应用高清适配的脚本
     mobileAdapt.init({

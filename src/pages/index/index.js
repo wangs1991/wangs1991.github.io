@@ -1,8 +1,9 @@
 import menu from '../../map'
 import Labels from '../../static/labels'
 import init from '../../assets/js/initial'
-import {serilizeUrl, getUriRoot} from '../../assets/js/Utils'
 import '../../components/titleHeader'
+import '../../components/goTop'
+import {serilizeUrl, getUriRoot} from '../../assets/js/Utils'
 require('./index.css')
 
 const vue = init()
@@ -24,13 +25,6 @@ export default new vue({
         return {
             menus: [],
             baseUri: __BASEURI
-        }
-    },
-    methods: {
-        filterByKeyword (keyword) {
-            this.menus.filter(n => {
-                return n.keyword == keyword
-            })
         }
     },
     created () {

@@ -18,3 +18,9 @@ export const getUriRoot = () => {
 
     return window.location.href.match(tester) ? '/dist/html/' : '/html/'
 }
+
+export const getArticleInfo = (uri, data) => {
+    return data.filter(n => {
+        return new RegExp(n.uri).test(uri)
+    })
+}

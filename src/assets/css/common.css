@@ -1,13 +1,14 @@
 @charset "UTF-8";
 //共用变量集合
 $static-header-height: .95rem; // 公用二级头样式
-$comp-header-hegiht: 1.42rem;
+$comp-header-hegiht: 1.72rem;
 
 $theme-color-1: rgba(233, 30, 99, 1); // 粉色
 $theme-color-1-70: rgba(233, 30, 99, .70); // 粉色
 $theme-color-1-10: rgba(233, 30, 99, .10); // 粉色
 $theme-color-2: rgba(255, 203, 7, 1);; // 金色
 $theme-color-2-70: rgba(255, 203, 7, .70);; // 金色
+$theme-color-2-30: rgba(255, 203, 7, .30);; // 金色
 $theme-color-2-10: rgba(255, 203, 7, .10);; // 金色
 
 //公用方法集合
@@ -24,6 +25,23 @@ $theme-color-2-10: rgba(255, 203, 7, .10);; // 金色
 @mixin blockPadding(){ //区块左右边距
   padding-left: .15rem;
   padding-right: .15rem;
+}
+
+@mixin scroller($width){
+  &::-webkit-scrollbar {/*滚动条整体样式*/
+    width: $width;     /*高宽分别对应横竖滚动条的尺寸*/
+    height: 1px;
+  }
+  &::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 5px $theme-color-2-70;
+    background: $theme-color-1;
+  }
+  &::-webkit-scrollbar-track {/*滚动条里面轨道*/
+    -webkit-box-shadow: inset 0 0 2px rgba( 0, 0, 0, 0.2);
+    border-radius: 10px;
+    background: $theme-color-2-30;
+  }
 }
 
 //基础共用样式:一屏宽高的页面容器
@@ -52,6 +70,8 @@ html, body, #base-panel__window{
     right: 0;
     bottom: 0;
     overflow: auto;
+
+    @include scroller(6px);
   }
 }
 
@@ -62,6 +82,7 @@ html, body, #base-panel__window{
   left: 0;
   right: 0;
   z-index: 10;
+  background: #fff;
 }
 .pdtb{
   padding-top: .30rem;
@@ -105,7 +126,7 @@ html, body, #base-panel__window{
   font-size: .26rem;
   width: 100%;
   overflow: auto;
-  //@include blockPadding();
+  @include scroller(1px);
   .label-item{
     display: inline-block;
     line-height: 1.5em;
@@ -128,7 +149,9 @@ html, body, #base-panel__window{
   display: inline-block;
   color: #b2bac2;
 }
-.base-article__keyword{
+.base-article__keyword,
+.base-article__date{
+  line-height: 1em;
   font-size: inherit;
   color: #b2bac2;
 }
@@ -164,9 +187,70 @@ html, body, #base-panel__window{
   height: .50rem;
   border-radius: 50%;
   border: .03rem solid $theme-color-2;
-  background: url('../../assets/images/avator.jpg') no-repeat center center;
+  background-repeat: no-repeat;
+  background-position: center center;
   -webkit-background-size: cover;
   background-size: cover;
+}
+
+//返回顶部
+.component-backTop{
+  position: fixed;
+  right: .50rem;
+  bottom: -.65rem;
+  background: #fff;
+  z-index: 1000;
+
+  transition: all ease .2s;
+
+  width: .60rem;
+  height: .60rem;
+  border-radius: .40rem;
+  box-shadow: 0 0 3px rgba(0, 0, 0, .3);
+  text-align: center;
+  cursor: pointer;
+  &:before{
+    content: '';
+    border: .10rem solid transparent;
+    border-bottom-color: #909090;
+  }
+
+  &.active{
+    bottom: .50rem;
+  }
+}
+
+//文章详情页面的个人信息和头部标题
+.component-articleTitle{
+  margin-bottom: .50rem;
+   .component-art__title h1{
+     font-size: .36rem;
+     font-weight: bold;
+   }
+  .component-art__user{
+    margin-top: .30rem;
+    border-radius: .05rem;
+    display: flex;
+    color: #b2bac2;
+    line-height: 1.5em;
+    overflow: hidden;
+    .art-user__avator{
+      width: .85rem;
+      height: .85rem;
+      background-repeat: no-repeat;
+      -webkit-background-size: cover;
+      background-size: cover;
+    }
+    .art-user__info{
+      font-size: .22rem;
+      padding: .10rem .24rem;
+      .art-iser__list{
+        font-size: 120%;
+        margin-bottom: .12rem;
+        color: #919191;
+      }
+    }
+  }
 }
 
 //加载过程什么都不显示

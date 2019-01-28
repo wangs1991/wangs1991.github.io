@@ -7,13 +7,10 @@ const vue = init()
 
 export default new vue({
     el: '#base-panel__window',
-    name: 'product',
+    name: 'README',
     data () {
         return {
-            header: {
-                title: '排版测试'
-            },
-            icon: require('../../assets/images/add_photo_icon.png')
+            html: require('../../../README.md')
         }
     },
     computed: {
