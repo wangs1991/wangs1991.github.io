@@ -8,6 +8,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin")
 var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 
 const common = require('./webpack.common')
+const Info = require('./src/config')
 
 const config = merge(common, {
     mode: 'production',
@@ -35,7 +36,7 @@ const config = merge(common, {
                     },
                         'postcss-loader',
                     ],
-                    publicPath: '../../'
+                    publicPath: '../'
                 })
             }
         ]
@@ -44,7 +45,7 @@ const config = merge(common, {
         new HtmlWebpackPlugin({
             filename: __dirname + '/index.html', // 生成html到指定位置
             template: __dirname + "/src/pages/index/index.html", // 模板文件
-            title: 'web-utils examples',
+            title: Info.title,
             chunks: ['common', 'app'],
             minify: {
                 removeComments: true,//删除注释

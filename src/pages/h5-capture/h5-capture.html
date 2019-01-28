@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>${htmlWebpackPlugin.options.title}</title>
+</head>
+<body class="loading">
+<section id="base-panel__window">
+    <article-read :title="title">
+        <slot>
+            <div class="markdown-format" v-html="html"></div>
+        </slot>
+    </article-read>
+</section>
+</body>
+</html>

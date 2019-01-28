@@ -1,5 +1,13 @@
 
 module.exports = [{
+    typeId: 1003,
+    type: '日常总结',
+    keywords: ['博客搭建过程'],
+    script: true,
+    name: '记录依赖GitHub搭建博客的过程',
+    uri: 'blog-build.html',
+    date: '2019-01-28'
+}, {
     typeId: 1004,
     type: 'webpack',
     keywords: ['多页构建配置'],
@@ -13,7 +21,7 @@ module.exports = [{
     keywords: ['html5'],
     script: true,
     name: '一个人脸认证H5项目获得的的知识点',
-    uri: 'h5capture.html',
+    uri: 'h5-capture.html',
     date: '2018-05-30'
 }, {
     typeId: 1000,
