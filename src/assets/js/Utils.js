@@ -28,7 +28,7 @@ export const getArticleInfo = (uri, data) => {
 export const getStaticRoot = () => {
     let tester = /github.io/
 
-    return window.location.href.match(tester) ? '/dist/html/' : '../'
+    return window.location.href.match(tester) ? 'dist/' : '../'
 }
 
 export default {

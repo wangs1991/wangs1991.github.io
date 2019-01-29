@@ -8,7 +8,7 @@ Vue.component('ArticleTitle', {
                         <h1>{{data.name}}</h1>
                     </section>
                     <section class="component-art__user">
-                        <div class="art-user__avator" :style="{'background-image': 'url('+ avator +')'}"></div>
+                        <div class="art-user__avator"></div>
                         <div class="art-user__info">
                             <p class="art-iser__list">{{Info.nickname}} says: {{Info.description}}</p>
                             <p>
@@ -30,11 +30,6 @@ Vue.component('ArticleTitle', {
         data: {
             type: Object,
             require: false
-        }
-    },
-    computed: {
-        avator () {
-            return require('../assets/images/avator.jpg')
         }
     },
     methods: {

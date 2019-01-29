@@ -15,7 +15,6 @@ Vue.component('titleHeader', {
                      <div class="header-icon__right">
                         <a :href="uriRoot + 'about.html'"
                             :title="info.nickname"
-                            :style="{'backgroundImage': 'url('+ avator +')'}"
                             class="header-avator">
                         </a>   
                      </div>
@@ -74,9 +73,6 @@ Vue.component('titleHeader', {
         },
         info () {
             return Info
-        },
-        avator () {
-            return require('../assets/images/avator.jpg')
         }
     },
     methods: {
