@@ -2,7 +2,8 @@ import Vue from 'vue/dist/vue'
 import './titleHeader'
 import './articleTitle'
 import './goTop'
-const Info = require('../config')
+import {Info} from '../config'
+
 // 全局组件的注册与使用
 Vue.component('ArticleRead', {
     template: `<div>

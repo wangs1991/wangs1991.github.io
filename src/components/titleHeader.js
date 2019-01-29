@@ -16,7 +16,7 @@ Vue.component('titleHeader', {
                             :title="info.nickname"
                             :style="{'backgroundImage': 'url('+ info.avator() +')'}"
                             class="header-avator">
-</a>   
+                        </a>   
                      </div>
                      <!--<div class="header-title__txt">{{config.title}}</div>-->
                     </header>
@@ -82,6 +82,6 @@ Vue.component('titleHeader', {
     },
     mounted () {
         this.labels.splice(1, 0, ...Labels)
-        this.active = serilizeUrl(window.location.href, 0).type
+        this.active = serilizeUrl(window.location.href, 0).type || 0
     }
 })

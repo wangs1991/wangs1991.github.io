@@ -5,8 +5,14 @@ const webpack = require('webpack')
 const pages = require('./src/map') // 多页面配置新数据
 const Info = require('./src/config')
 
+function resolve (dir) {
+    console.log(path.join(__dirname, dir))
+    return path.join(__dirname, dir)
+}
+
 console.log('==============================================')
 console.log(process.env.NODE_ENV)
+console.log(__dirname)
 console.log('==============================================')
 
 module.exports = {
@@ -89,9 +95,13 @@ module.exports = {
             },
             {
                 test: /\.js$/,
-                loader: 'babel-loader',
+                use: [
+                    {
+                        loader: 'babel-loader',
+                    }
+                ],
                 exclude: /node_modules/,
-                include: [path.resolve('pages'), path.resolve('components'), path.resolve('index.js')] // 所有的js用babel转码到es5标准，指定包含全部的用户js路径
+                include: [resolve('src')] // 所有的js用babel转码到es5标准，指定包含全部的用户js路径
             },
             {
                 test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,

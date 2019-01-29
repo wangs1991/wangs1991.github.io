@@ -24,3 +24,9 @@ export const getArticleInfo = (uri, data) => {
         return new RegExp(n.uri).test(uri)
     })
 }
+
+export default {
+    serilizeUrl,
+    getUriRoot,
+    getArticleInfo
+}
