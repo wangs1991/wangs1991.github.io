@@ -35,7 +35,8 @@ module.exports = {
     })(),
     output: {
         filename: "assets/js/[name].[hash].js",    // js文件输出到dist/script/name.hash.js
-        path: path.resolve(__dirname, './dist/')
+        path: path.resolve(__dirname, '/dist/'),
+        publicPath: '../../'
     },
     plugins: [
         new HtmlWebpackPlugin({
