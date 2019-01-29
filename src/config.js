@@ -4,7 +4,7 @@ module.exports = {
         let path = './'
 
         if (window.location.href.match(tester)) {
-            path = './../../dist/'
+            path = 'dist/'
         }
         return require(path + 'assets/images/avator.jpg')
     },
