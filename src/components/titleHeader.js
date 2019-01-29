@@ -3,6 +3,7 @@ import Vue from 'vue/dist/vue'
 import Labels from '../static/labels'
 import {serilizeUrl, getUriRoot} from '../assets/js/Utils'
 const Info = require('../config')
+
 // 全局组件的注册与使用
 Vue.component('titleHeader', {
     template: `<section class="component-header">
@@ -14,7 +15,7 @@ Vue.component('titleHeader', {
                      <div class="header-icon__right">
                         <a :href="uriRoot + 'about.html'"
                             :title="info.nickname"
-                            :style="{'backgroundImage': 'url('+ info.avator() +')'}"
+                            :style="{'backgroundImage': 'url('+ avator +')'}"
                             class="header-avator">
                         </a>   
                      </div>
@@ -73,6 +74,9 @@ Vue.component('titleHeader', {
         },
         info () {
             return Info
+        },
+        avator () {
+            return require('../assets/images/avator.jpg')
         }
     },
     methods: {

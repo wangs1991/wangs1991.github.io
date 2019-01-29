@@ -2,7 +2,6 @@ import Vue from 'vue/dist/vue'
 import './titleHeader'
 import './articleTitle'
 import './goTop'
-import {Info} from '../config'
 
 // 全局组件的注册与使用
 Vue.component('ArticleRead', {
@@ -16,8 +15,7 @@ Vue.component('ArticleRead', {
                 </div>`,
     data () {
         return {
-            active: false,
-            Info
+            active: false
         }
     },
     props: {
