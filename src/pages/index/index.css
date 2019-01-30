@@ -1,7 +1,7 @@
 @charset "utf-8";
 @import '../../assets/css/common.css';
 .demo-list__entry {
-    font-size: .22rem;
+    font-size: .26rem;
     padding: 0 .30rem .36rem .30rem;
     list-style: none;
     li{
@@ -35,7 +35,7 @@
     }
     .item-info{
         margin-top: .10rem;
-        font-size: .20rem;
+        font-size: .18rem;
         line-height: 1.5em;
         span:not(:first-child):before{
             content: ' ';
@@ -48,6 +48,8 @@
             margin-right: .14rem;
             position: relative;
             top: -.04rem;
+        }
+        [class^="base-article"]{
         }
     }
 }

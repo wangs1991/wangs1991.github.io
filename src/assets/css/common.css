@@ -146,8 +146,7 @@ html, body, #base-panel__window{
 
 //标签的样式
 .base-article__label{
-  display: inline-block;
-  color: #b2bac2;
+
 }
 .base-article__keyword,
 .base-article__date{
