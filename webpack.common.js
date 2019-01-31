@@ -2,8 +2,11 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const StylelintWebpackPlugin = require('stylelint-webpack-plugin')
 const webpack = require('webpack')
+const marked = require('marked')
+const renderer = new marked.Renderer()
 const pages = require('./src/map') // 多页面配置新数据
 const Info = require('./src/config')
+
 
 function resolve (dir) {
     console.log(path.join(__dirname, dir))
@@ -89,7 +92,22 @@ module.exports = {
                         loader: "html-loader"
                     },
                     {
-                        loader: "markdown-loader"
+                        loader: "markdown-loader",
+                        options: {
+                            langPrefix: '',
+                            renderer: renderer,
+                            highlight: function(code) {
+                                return require('highlight.js').highlightAuto(code).value;
+                            },
+                            pedantic: false,
+                            gfm: true,
+                            tables: true,
+                            breaks: false,
+                            sanitize: false,
+                            smartLists: true,
+                            smartypants: true,
+                            xhtml: false
+                        }
                     }
                 ]
             },
@@ -102,6 +120,22 @@ module.exports = {
                 ],
                 exclude: /node_modules/,
                 include: [resolve('src')] // 所有的js用babel转码到es5标准，指定包含全部的用户js路径
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    {
+                        loader: 'style-loader'
+                    }, {
+                        loader: 'css-loader',
+                        options: {
+                            importLoaders: 1
+                        }
+                    }, {
+                        loader: 'postcss-loader'
+                    }
+                ],
+                include: [resolve('node_modules')] // 所有的js用babel转码到es5标准，指定包含全部的用户js路径
             },
             {
                 test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,

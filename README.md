@@ -182,6 +182,7 @@ module.exports = {
  
  
 ### TODO
- + mardomn 代码高亮，todo list支持；
- + cli 命令支持
+ -[x] mardomn 代码高亮;
+ -[ ] todo list支持；
+ -[ ] cli 命令支持
 
