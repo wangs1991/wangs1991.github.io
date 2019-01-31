@@ -35,7 +35,7 @@
     }
     .item-info{
         margin-top: .10rem;
-        font-size: .18rem;
+        font-size: .22rem;
         line-height: 1.5em;
         span:not(:first-child):before{
             content: ' ';
@@ -48,8 +48,6 @@
             margin-right: .14rem;
             position: relative;
             top: -.04rem;
-        }
-        [class^="base-article"]{
         }
     }
 }

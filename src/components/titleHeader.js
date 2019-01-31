@@ -63,7 +63,7 @@ Vue.component('titleHeader', {
                 }
             })
 
-            ret += this.labels.length * window.rem2px(0.30) + 'px'
+            ret += (this.labels.length + 5) * window.rem2px(0.30) + 'px'
             return {
                 width: ret
             }

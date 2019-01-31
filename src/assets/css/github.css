@@ -315,7 +315,7 @@ div.search-form .autocomplete-results a.selected, div.search-form .autocomplete-
 
 .markdown-format code {
     font-family: Monaco, "DejaVu Sans Mono", "Courier New", monospace;
-    font-size: 13px;
+    font-size: .20rem;
     color: #24292e;
     background: rgba(27,31,35,.05);
 }

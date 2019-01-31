@@ -127,10 +127,15 @@ html, body, #base-panel__window{
   width: 100%;
   overflow: auto;
   @include scroller(1px);
+  .scroller-labels__panel{
+    display: flex;
+    flex-wrap: nowrap;
+  }
   .label-item{
-    display: inline-block;
+    word-break: keep-all;
+    word-wrap: normal;
     line-height: 1.5em;
-    margin-left: .30rem;
+    margin-left: 1.4em;
     color: #71777c;
     cursor: pointer;
     &:hover{
