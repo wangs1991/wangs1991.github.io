@@ -10,7 +10,7 @@ Vue.component('ArticleTitle', {
                     <section class="component-art__user">
                         <div class="art-user__avator"></div>
                         <div class="art-user__info">
-                            <p class="art-iser__list">{{Info.nickname}} says: {{Info.description}}</p>
+                            <p class="art-iser__list">{{Info.nickname}}</p>
                             <p>
                                 <span class="base-article__keyword" 
                                         v-for="(kword, idx) in data.keywords"

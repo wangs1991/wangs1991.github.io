@@ -24,6 +24,14 @@ module.exports = [{
     uri: 'h5-capture.html',
     date: '2018-05-30'
 }, {
+    typeId: 1002,
+    type: '待读收藏',
+    keywords: ['待读收藏', '博库'],
+    script: true,
+    name: '优秀网络资源收藏',
+    uri: 'collect-list.html',
+    date: '2019-02-12'
+}, {
     typeId: 1000,
     type: '功能测试',
     keywords: ['html'],

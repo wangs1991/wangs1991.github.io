@@ -7,9 +7,9 @@ import 'highlight.js/styles/monokai.css'
 // 公用的脚本
 import mobileAdapt from './mobileAdapt'
 import vue from 'vue/dist/vue'
-import vConsole from 'vconsole'
+// import vConsole from 'vconsole'
 
-new vConsole()
+// new vConsole()
 // import '../../components/goTop'
 
 export default () => {

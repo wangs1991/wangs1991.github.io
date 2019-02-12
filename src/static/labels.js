@@ -8,8 +8,8 @@ module.exports = [{
     color: '#c686f9'
 }, {
     id: 1002,
-    label: '资源收藏',
-    color: '#f0f'
+    label: '待读收藏',
+    color: '#04BE02'
 }, {
     id: 1001,
     label: '读书笔记',

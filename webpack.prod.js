@@ -46,6 +46,7 @@ const config = merge(common, {
             filename: __dirname + '/index.html', // 生成html到指定位置
             template: __dirname + "/src/pages/index/index.html", // 模板文件
             title: Info.title,
+            description: Info.description,
             chunks: ['common', 'app'],
             minify: {
                 removeComments: true,//删除注释
