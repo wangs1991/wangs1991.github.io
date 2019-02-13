@@ -1,6 +1,6 @@
 import init from '../../assets/js/initial'
 import {getArticleInfo} from '../../assets/js/Utils'
-import articles from '../../map'
+import articles from '../../data'
 import '../../components/ArticleRead'
 
 const vue = init()

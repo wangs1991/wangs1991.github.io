@@ -1,4 +1,4 @@
-import menu from '../../map'
+import menu from '../../data'
 import Labels from '../../static/labels'
 import init from '../../assets/js/initial'
 import '../../components/titleHeader'

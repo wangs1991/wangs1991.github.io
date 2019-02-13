@@ -4,18 +4,16 @@ const StylelintWebpackPlugin = require('stylelint-webpack-plugin')
 const webpack = require('webpack')
 const marked = require('marked')
 const renderer = new marked.Renderer()
-const pages = require('./src/map') // 多页面配置新数据
+const pages = require('./src/data') // 多页面配置新数据
 const Info = require('./src/config')
 
 
 function resolve (dir) {
-    console.log(path.join(__dirname, dir))
     return path.join(__dirname, dir)
 }
 
 console.log('==============================================')
 console.log(process.env.NODE_ENV)
-console.log(__dirname)
 console.log('==============================================')
 
 module.exports = {
@@ -41,17 +39,6 @@ module.exports = {
         path: path.resolve(__dirname, './dist/')
     },
     plugins: [
-        new HtmlWebpackPlugin({
-            filename: __dirname + '/dist/index.html', // 生成html到指定位置
-            template: __dirname + "/src/pages/index/index.html", // 模板文件
-            title: Info.title,
-            description: Info.description,
-            chunks: ['common', 'app'],
-            minify: {
-                removeComments: true,//删除注释
-                collapseWhitespace: true//删除空格
-            }
-        }),
         ...(function () { // 匿名自执行方法遍历页面数据，生成到模块的html文件到dist/html/[name]/name.html
             let ret = []
             let folder

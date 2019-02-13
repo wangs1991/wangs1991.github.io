@@ -1,5 +1,189 @@
 ## Welcome to GitHub Pages
 > vue 多页面应用构建的[Github Blog](https://wangs1991.github.io/).
+## 思路
+> gitpage是github提供给开发者的个人域名，指到个人用户名下面。很多开发者利用gitpage结合博客模板工具搭建了个人博客。
+我按照网络文章指导利用gitpage+hexo搭建博客，在创建之后总感觉主题不是很喜欢，如果自定义样式的话又需要了解模板语法，如果想要`JavaScript`相关的效果有比较麻烦（这些纯属意淫，实际实践步骤仅仅是本地创建页面运行服务浏览报错就放弃了模板工具）。
+分析发现gitpage的主页指向的项目根目录的`index.html`，其他页面的路径只需要通过该页面提供入口就能组织好博客页面间的跳转关系。
+so要自己实现一个博客模板工具的话只需要可以自动把子页的链接以及标题放到根目录的入口页面，然后简单操作就能发布更新就ok了。基本思路有了，刚好手头时间又比较充裕，就有了用`webpack`自己配置搭建一个博客模板的想法。总结需要解决的问题如下：
+
+* 首页自动生成子页入口链接
+* 文章创建简单方便
+* 基础主题样式提供
+* markdown语法支持
+* 博客的发布更新方便
+
+### 文章数据集合
+通过一个数组记录全部文章数据。基本数据格式如下：
+```javascript
+[{
+    typeId: 1003,
+    type: '日常总结',
+    keywords: ['博客搭建过程'],
+    script: true,
+    name: '记录依赖GitHub搭建博客的过程',
+    uri: 'blog-build.html',
+    date: '2019-01-28'
+},
+...
+]
+```
+这个数据做承载的使命还是挺多的：
+- 生成首页列表提供文章的入口链接；
+- `webpack`生成多页面的配置数据；
+- 页面模板标题数据的来源；
+
+#### 组织文件目录
+预期的目录结构如下，分离源码和产出文件夹。
+```text
+ root
+  |---- dist                // webpack构建产出的项目
+  |  |---- assets           // 静态资源存放的位置
+  |  |---- html             // html页面
+  |---- node_modules
+  |---- src                 // 开发源码位置
+  |  |---- assets           // 静态资源位置
+  |  |  |---- css           
+  |  |  |---- fonts
+  |  |  |---- images
+  |  |  |---- js            // 存放公用的js文件
+  |  |---- components       // 公用的组件文件
+  |  |---- pages            // 博客页面
+  |  |  |---- index         // 每个页面独立一个文件夹，包含所有的模板文件、脚本、样式等
+  |  |     |---- index.js
+  |  |     |---- index.html
+  |  |     |---- index.css
+  |  |     |---- index.md   // 支持md语法，可以使用md编辑内容，如果用html自定义则可以无这个文件
+  |  |---- static           // 静态/模拟json数据
+  |  |---- config.js        // 个人数据的配置信息：用户名，页面title等
+  |  |---- data.js           // 博客页面数据集合，需手动维护
+  |---- .babelrc
+  |---- .gitingnore
+  |---- .stylelintrc
+  |---- _config.yml
+  |---- index.html          // gitpage 指向首页
+  |---- package.json
+  |---- postcss.config.js   // postcss 配置
+  |---- README.md           // github 生成的md说明文件，项目说明
+  |---- webpack.common.js
+  |---- webbpack.dev.js
+  |---- webpack.prod.js
+```
+#### webpack基本配置
+`webpack`配置中通过`data.js`的遍历指定每个页面入口`js`位置。同时通过这个数据还指定了每个页面的`html`模板文件。
+```javascript
+module.exports = {
+    entry: (function () {
+        let ret = {
+            app: './src/pages/index/index.js' // index.html 中 index.js 的入口文件
+        }
+        let chunk
+
+        // 根据页面数据遍历js入口的集合
+        pages.filter(n => {
+            return !!n.script
+        }).forEach(n => {
+            chunk = n.uri.split('.')[0]
+
+            ret[chunk] = __dirname + '/src/pages/' + chunk + '/' + chunk + '.js'
+        })
+
+        return ret // 返回多个页面入口
+    })(),
+    output: {
+        filename: "assets/js/[name].[hash].js",    // js文件输出到dist/script/name.hash.js
+        path: path.resolve(__dirname, './dist/')
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            filename: __dirname + '/dist/index.html', // 生成html到指定位置
+            template: __dirname + "/src/pages/index/index.html", // 模板文件
+            title: Info.title,
+            description: Info.description,
+            chunks: ['common', 'app'],
+            minify: {
+                removeComments: true,//删除注释
+                collapseWhitespace: true//删除空格
+            }
+        }),
+        ...(function () { // 匿名自执行方法遍历页面数据，生成到模块的html文件到dist/html/[name]/name.html
+            let ret = []
+            let folder
+            // let exec = /\.html/
+
+            pages.forEach(n => {
+                folder = n.uri.split('.')[0]
+
+                ret.push(new HtmlWebpackPlugin({
+                    filename: __dirname + '/dist/html/' + n.uri,
+                    template: __dirname + '/src/pages/' + folder + '/' + n.uri,
+                    title: (function () {
+                        return n.name + ' | ' + Info.title  // 动态更改页面的title属性值
+                    })(),
+                    description: Info.description,
+                    chunks: ['common', folder],
+                    minify:
+                        {
+                            removeComments: true,//删除注释
+                            collapseWhitespace:
+                                true//删除空格
+                        }
+                }))
+            })
+
+            return ret
+        })()
+    ]
+}
+```
+
+### 开发环境和生产环境的差异化配置
+相对于开发环境，生产环境需要对代码进行的优化操作比较多，其中包括代码的分隔、压缩与hash命名、css处理。对于这个项目还有一个坑，对开发环境指定的根目录是在`dist`下：
+```javascript
+    ...
+    mode: 'development',
+    devtool: 'inline-source-map',
+    devServer: {
+        host: '0.0.0.0',
+        port: 8090,
+        contentBase: ['./dist'],
+        inline: true,
+        hot: true
+    }
+    ....
+```
+但是gitpage引用的首页`index.html`是位于项目根目录下的，这就需要在分别在根目录和`dist`目录下分别生成一个`index.html`。
+```javascript
+// webpack.dev.js
+    plugins: [
+        new HtmlWebpackPlugin({
+            filename: __dirname + '/dist/index.html', // 生成html到指定位置
+            template: __dirname + "/src/pages/index/index.html", // 模板文件
+            title: Info.title,
+            description: Info.description,
+            chunks: ['common', 'app'],
+            minify: {
+                removeComments: true,//删除注释
+                collapseWhitespace: true//删除空格
+            }
+        }),
+        ...
+    ]
+// webpack.prod.js
+    plugins: [
+        new HtmlWebpackPlugin({
+            filename: __dirname + '/index.html', // 生成html到指定位置
+            template: __dirname + "/src/pages/index/index.html", // 模板文件
+            title: Info.title,
+            description: Info.description,
+            chunks: ['common', 'app'],
+            minify: {
+                removeComments: true,//删除注释
+                collapseWhitespace: true//删除空格
+            }
+        }),
+        ...
+    ]
+```
 ### 文件目录结构
 
 #### 页面目录
@@ -25,7 +209,7 @@
   |  |     |---- index.md   // 支持md语法，可以使用md编辑内容，如果用html自定义则可以无这个文件
   |  |---- static           // 静态\模拟json数据
   |  |---- config.js        // 个人数据的配置信息：用户名，页面title等
-  |  |---- map.js           // 博客页面数据集合，需手动维护
+  |  |---- data.js           // 博客页面数据集合，需手动维护
   |---- .babelrc
   |---- .gitingnore
   |---- .stylelintrc
@@ -52,7 +236,7 @@
 ```
 
 #### 用户信息配置说明
-配置文件：`src > map.js`
+配置文件：`src > data.js`
 
 字段说明：
 ```javascript
@@ -78,7 +262,8 @@ const vue = init() // 完成页面的初始化操作并返回vue构建函数的�
 
 export default new vue({
     el: '#base-panel__window',
-    name: 'README',
+    name: 'README',00
+    
     data () {
         return {
             html: require('../../../README.md') // mardown格式的博客需要指定.md文件的路径

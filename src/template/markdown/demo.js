@@ -7,10 +7,10 @@ const vue = init()
 
 export default new vue({
     el: '#base-panel__window',
-    name: 'README',
+    name: 'markdown',
     data () {
         return {
-            html: require('../../../README.md')
+            html: require('./demo.md')
         }
     },
     computed: {
