@@ -7,5 +7,4 @@ module.exports = {
             browsers: ['last 5 versions']
         })
     ]
-
 }

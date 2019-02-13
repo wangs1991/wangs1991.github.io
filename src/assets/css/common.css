@@ -1,74 +1,89 @@
 @charset "UTF-8";
-//共用变量集合
-$static-header-height: .95rem; // 公用二级头样式
+
+/*共用变量集合*/
+$static-header-height: .95rem;
+// 公用二级头样式
 $comp-header-hegiht: 1.72rem;
 
 $theme-color-1: rgba(233, 30, 99, 1); // 粉色
 $theme-color-1-70: rgba(233, 30, 99, .70); // 粉色
 $theme-color-1-10: rgba(233, 30, 99, .10); // 粉色
-$theme-color-2: rgba(255, 203, 7, 1);; // 金色
-$theme-color-2-70: rgba(255, 203, 7, .70);; // 金色
-$theme-color-2-30: rgba(255, 203, 7, .30);; // 金色
-$theme-color-2-10: rgba(255, 203, 7, .10);; // 金色
+$theme-color-2: rgba(255, 203, 7, 1); // 金色
+$theme-color-2-70: rgba(255, 203, 7, .70); // 金色
+$theme-color-2-30: rgba(255, 203, 7, .30); // 金色
+$theme-color-2-10: rgba(255, 203, 7, .10); // 金色
 
 //公用方法集合
-@mixin els(){ // 超出部分省略号
-  white-space:nowrap; text-overflow:ellipsis;  overflow:hidden;
-}
-@mixin clear(){ // 清除浮动
-  *zoom: 1;
-  &:after{content: "";display: table;clear: both;}
-}
-@mixin ofh(){ // 触发BFC清除浮动
+@mixin els() {
+// 超出部分省略号
+  white-space: nowrap;
+  text-overflow: ellipsis;
   overflow: hidden;
 }
-@mixin blockPadding(){ //区块左右边距
+@mixin clear() {
+// 清除浮动
+  *zoom: 1;
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+@mixin ofh() {
+// 触发BFC清除浮动
+  overflow: hidden;
+}
+@mixin blockPadding() {
+//区块左右边距
   padding-left: .15rem;
   padding-right: .15rem;
 }
 
-@mixin scroller($width){
-  &::-webkit-scrollbar {/*滚动条整体样式*/
-    width: $width;     /*高宽分别对应横竖滚动条的尺寸*/
+@mixin scroller($width) {
+  &::-webkit-scrollbar { /*滚动条整体样式*/
+    width: $width; /*高宽分别对应横竖滚动条的尺寸*/
     height: 1px;
   }
-  &::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+
+  &::-webkit-scrollbar-thumb { /*滚动条里面小方块*/
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 5px $theme-color-2-70;
     background: $theme-color-1;
   }
-  &::-webkit-scrollbar-track {/*滚动条里面轨道*/
-    -webkit-box-shadow: inset 0 0 2px rgba( 0, 0, 0, 0.2);
+
+  &::-webkit-scrollbar-track { /*滚动条里面轨道*/
+    -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     background: $theme-color-2-30;
   }
 }
 
 //基础共用样式:一屏宽高的页面容器
-html, body, #base-panel__window{
-  font-family: 'PingFang SC', 'Microsoft YaHei UI';
-  font-size: .18rem;
-
+html, body, #base-panel__window {
   width: 100%;
   height: 100%;
   overflow: hidden;
+  font-size: .18rem;
+  font-family: 'PingFang SC', 'Microsoft YaHei UI';
 }
-*{
+
+* {
   text-shadow: 0 0 .01rem $theme-color-2-10;
 }
-#base-panel__window{
+
+#base-panel__window {
   position: relative;
   z-index: 1;
   max-width: 900px;
-  margin-left: auto;
   margin-right: auto;
-  .base-panel__content{
+  margin-left: auto;
+  .base-panel__content {
     position: absolute;
     z-index: 1;
     top: $comp-header-hegiht;
+    bottom: 0;
     left: 0;
     right: 0;
-    bottom: 0;
     overflow: auto;
 
     @include scroller(6px);
@@ -76,50 +91,53 @@ html, body, #base-panel__window{
 }
 
 //公用组件样式
-.component-header{
+.component-header {
   position: absolute;
+  z-index: 10;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 10;
   background: #fff;
 }
-.pdtb{
+
+.pdtb {
   padding-top: .30rem;
   padding-bottom: .30rem;
 }
-.pdlr{
+
+.pdlr {
   padding-left: .30rem;
   padding-right: .30rem;
 }
+
 //头部样式
-.component-header__static{
+.component-header__static {
   height: $static-header-height;
 
-  @include clear();
-  //头部返回按钮和右侧可变化的更多搜索按钮占位
+  @include clear(); //头部返回按钮和右侧可变化的更多搜索按钮占位
   .header-icon__left,
-  .header-icon__right{
+  .header-icon__right {
     width: .75rem;
     height: $static-header-height;
-    //background: #e8e8e8;
+  //background: #e8e8e8;
   }
-  .header-icon__left{
+  .header-icon__left {
     float: left;
   }
-  .header-icon__right{
+  .header-icon__right {
     float: right;
   }
-  //头部标题
-  .header-title__txt{
+//头部标题
+  .header-title__txt {
     text-align: center;
     line-height: $static-header-height;
     font-size: .24rem;
     color: #000000;
   }
 }
+
 //滚动分类样式
-.scroller-labels{
+.scroller-labels {
   padding-top: .12rem;
   padding-bottom: .20rem;
   line-height: 1.5em;
@@ -127,21 +145,21 @@ html, body, #base-panel__window{
   width: 100%;
   overflow: auto;
   @include scroller(1px);
-  .scroller-labels__panel{
+  .scroller-labels__panel {
     display: flex;
     flex-wrap: nowrap;
   }
-  .label-item{
-    word-break: keep-all;
+  .label-item {
     word-wrap: normal;
+    word-break: keep-all;
     line-height: 1.5em;
     margin-left: 1.4em;
     color: #71777c;
     cursor: pointer;
-    &:hover{
+    &:hover {
       color: $theme-color-1-70;
     }
-    &.active{
+    &.active {
       background: linear-gradient(to right bottom, $theme-color-1 45%, $theme-color-2);
       -webkit-background-clip: text;
       color: transparent;
@@ -150,18 +168,19 @@ html, body, #base-panel__window{
 }
 
 //标签的样式
-.base-article__label{
+.base-article__label {
 
 }
+
 .base-article__keyword,
-.base-article__date{
+.base-article__date {
   line-height: 1em;
   font-size: inherit;
   color: #b2bac2;
 }
 
 //logo
-.logo{
+.logo {
   line-height: $static-header-height;
   text-align: center;
   transform: rotate(90deg);
@@ -173,17 +192,17 @@ html, body, #base-panel__window{
     height: .30rem;
     border-radius: .15rem;
   }
-  &:before{
+  &:before {
     background: $theme-color-1-70;
     margin-right: -.10rem;
   }
-  &:after{
+  &:after {
     background: $theme-color-2-70;
   }
 }
 
 //头像，关于我
-.header-avator{
+.header-avator {
   display: block;
   margin-top: .15rem;
   margin-left: -.05rem;
@@ -192,14 +211,14 @@ html, body, #base-panel__window{
   border-radius: 50%;
   border: .03rem solid $theme-color-2;
   background-image: url('../../assets/images/avator.jpg');
-  background-repeat: no-repeat;
   background-position: center center;
+  background-repeat: no-repeat;
   -webkit-background-size: cover;
   background-size: cover;
 }
 
 //返回顶部
-.component-backTop{
+.component-backTop {
   position: fixed;
   right: .50rem;
   bottom: -.65rem;
@@ -214,32 +233,32 @@ html, body, #base-panel__window{
   box-shadow: 0 0 3px rgba(0, 0, 0, .3);
   text-align: center;
   cursor: pointer;
-  &:before{
+  &:before {
     content: '';
     border: .10rem solid transparent;
     border-bottom-color: #909090;
   }
 
-  &.active{
+  &.active {
     bottom: .50rem;
   }
 }
 
 //文章详情页面的个人信息和头部标题
-.component-articleTitle{
+.component-articleTitle {
   margin-bottom: .50rem;
-   .component-art__title h1{
-     font-size: .36rem;
-     font-weight: bold;
-   }
-  .component-art__user{
+  .component-art__title h1 {
+    font-size: .36rem;
+    font-weight: bold;
+  }
+  .component-art__user {
     margin-top: .30rem;
     border-radius: .05rem;
     display: flex;
     color: #b2bac2;
     line-height: 1.5em;
     overflow: hidden;
-    .art-user__avator{
+    .art-user__avator {
       width: .85rem;
       height: .85rem;
       background-image: url('../../assets/images/avator.jpg');
@@ -247,10 +266,10 @@ html, body, #base-panel__window{
       -webkit-background-size: cover;
       background-size: cover;
     }
-    .art-user__info{
-      font-size: .22rem;
+    .art-user__info {
       padding: .10rem .24rem;
-      .art-iser__list{
+      font-size: .22rem;
+      .art-iser__list {
         font-size: 120%;
         margin-bottom: .12rem;
         color: #919191;
@@ -260,17 +279,18 @@ html, body, #base-panel__window{
 }
 
 //加载过程什么都不显示
-.loading{
-  *{
+.loading {
+  * {
     opacity: 0;
-    filter: alpha(opacity=0)
+    filter: alpha(opacity=0);
   }
 }
+
 //移动端query
 @media only screen
 and (min-device-width: 320px)
 and (max-device-width: 750px) {
-  #base-panel__window{
+  #base-panel__window {
     max-width: 100%;
   }
 }

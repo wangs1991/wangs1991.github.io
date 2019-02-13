@@ -283,7 +283,7 @@
       }
     ],
     "number-leading-zero": "never",
-    "number-no-trailing-zeros": true,
+    "number-no-trailing-zeros": null,
     "length-zero-no-unit": true,
     "value-list-comma-space-after": "always",
     "declaration-colon-space-after": "always",
@@ -293,11 +293,16 @@
     "declaration-block-no-redundant-longhand-properties": true,
     "declaration-block-semicolon-newline-after": "always",
     "block-closing-brace-newline-after": "always",
+    "media-feature-name-no-unknown": null,
     "media-feature-colon-space-after": "always",
     "media-feature-range-operator-space-after": "always",
     "at-rule-name-space-after": "always",
     "indentation": 2,
     "no-eol-whitespace": true,
-    "string-no-newline": null
+    "string-no-newline": null,
+    "selector-list-comma-newline-after": null,
+    "at-rule-no-unknown": null,
+    "declaration-empty-line-before": null,
+    "rule-empty-line-before": null
   }
 }

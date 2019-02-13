@@ -1,53 +1,54 @@
 @charset "utf-8";
 @import '../../assets/css/common.css';
+
 .demo-list__entry {
-    font-size: .26rem;
-    padding: 0 .30rem .36rem .30rem;
-    list-style: none;
-    li{
-        margin-top: .25rem;
-        margin-bottom: .40rem;
-        font-size: .28rem;
+  list-style: none;
+  padding: 0 .30rem .36rem;
+  font-size: .26rem;
+  li {
+    margin-top: .25rem;
+    margin-bottom: .40rem;
+    font-size: .28rem;
+  }
+  a {
+    font-size: inherit;
+    color: #2e3135;
+    font-weight: 600;
+    display: block;
+    &:before {
+      content: '';
+      display: inline-block;
+      float: left;
+      border: .06rem solid transparent;
+      border-top-color: $theme-color-1;
+      border-left-color: $theme-color-1;
     }
-    a {
-        font-size: inherit;
-        color: #2e3135;
-        font-weight: 600;
-        display: block;
-        &:before{
-            content: '';
-            display: inline-block;
-            float: left;
-            border: .06rem solid transparent;
-            border-top-color: $theme-color-1;
-            border-left-color: $theme-color-1;
-        }
-        &:hover{
-            text-decoration: underline;
-        }
-        &:visited{
-            color: #909090;
-            &:before{
-                border-top-color: $theme-color-2;
-                border-left-color: $theme-color-2;
-            }
-        }
+    &:hover {
+      text-decoration: underline;
     }
-    .item-info{
-        margin-top: .10rem;
-        font-size: .22rem;
-        line-height: 1.5em;
-        span:not(:first-child):before{
-            content: ' ';
-            display: inline-block;
-            width: .04rem;
-            height: .04rem;
-            border-radius: .04rem;
-            background: #b2bac2;
-            margin-left: .10rem;
-            margin-right: .14rem;
-            position: relative;
-            top: -.04rem;
-        }
+    &:visited {
+      color: #909090;
+      &:before {
+        border-top-color: $theme-color-2;
+        border-left-color: $theme-color-2;
+      }
     }
+  }
+  .item-info {
+    margin-top: .10rem;
+    font-size: .22rem;
+    line-height: 1.5em;
+    span:not(:first-child):before {
+      position: relative;
+      top: -.04rem;
+      content: ' ';
+      display: inline-block;
+      width: .04rem;
+      height: .04rem;
+      border-radius: .04rem;
+      margin-left: .10rem;
+      margin-right: .14rem;
+      background: #b2bac2;
+    }
+  }
 }

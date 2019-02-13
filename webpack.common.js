@@ -64,7 +64,7 @@ module.exports = {
                     filename: __dirname + '/dist/html/' + n.uri,
                     template: __dirname + '/src/pages/' + folder + '/' + n.uri,
                     title: (function () {
-                        return n.name + '|' + Info.title
+                        return n.name + ' | ' + Info.title
                     })(),
                     description: Info.description,
                     chunks: ['common', folder],
@@ -81,10 +81,10 @@ module.exports = {
         })(),
         new StylelintWebpackPlugin({
             context: 'src',
-            configFile: path.resolve(__dirname,'.stylelintrc'),
+            configFile: path.resolve(__dirname,'./.stylelintrc'),
             failOnError: true,
             lintDirtyModulesOnly: true,
-            syntax: 'css'
+            syntax: 'scss'
         })
     ],
     module: {
@@ -139,7 +139,7 @@ module.exports = {
                         loader: 'postcss-loader'
                     }
                 ],
-                include: [resolve('node_modules')] // 所有的js用babel转码到es5标准，指定包含全部的用户js路径
+                exclude: [resolve('node_modules')] // 所有的js用babel转码到es5标准，指定包含全部的用户js路径
             },
             {
                 test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,

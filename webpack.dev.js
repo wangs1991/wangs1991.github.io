@@ -21,7 +21,7 @@ module.exports = merge(common, {
         rules: [
             {
                 test: /\.css$/,
-                exclude: /node_modules/,
+                include: /node_modules/,
                 use: [{
                     loader: 'style-loader'
                 }, {
@@ -29,8 +29,6 @@ module.exports = merge(common, {
                     options: {
                         importLoaders: 1
                     }
-                }, {
-                    loader: 'postcss-loader'
                 }] // 样式文件分别经过postcss、css、style loader出来
             }
         ]

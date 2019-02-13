@@ -4,9 +4,8 @@
   margin-top: .15rem;
 }
 [class^='info-block'] {
-  font-size: .24rem;
-  margin-bottom: .35rem;
   padding: 0 .30rem;
+  margin-bottom: .35rem;
+  font-size: .24rem;
   border-radius: .10rem;
-  //border: 1px solid $theme-color-1-10;
 }
