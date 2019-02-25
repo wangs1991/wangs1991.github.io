@@ -2,6 +2,8 @@
 
 ljianshu：打造优质前端博客[gihub博客](https://github.com/ljianshu/Blog)|[掘金主页](https://juejin.im/user/56dea4aa7664bf00559f002d)
 
+[The best of JavaScript, HTML and CSS 框架趋势](https://bestofjs.org/)
+
 
 #### 待读书籍
 
@@ -9,6 +11,8 @@ ljianshu：打造优质前端博客[gihub博客](https://github.com/ljianshu/Blo
 [2018年 JavaScript 明星项目](https://risingstars.js.org/2018/zh/)
 
 #### 博文收藏
+> 2019-02-18
+-[ ] [前端大厂面试题](https://github.com/Advanced-Frontend/Daily-Interview-Question)
 > 2019-02-12
 
 -[ ] [九种跨域方式实现原理（完整版）](https://juejin.im/post/5c23993de51d457b8c1f4ee1)
@@ -21,3 +25,6 @@ ljianshu：打造优质前端博客[gihub博客](https://github.com/ljianshu/Blo
 
 > 2019-02-13
 -[ ] [给2019前端的5个建议](https://juejin.im/post/5c617c576fb9a049e93d33a4) [ js注入scss变量到样式文件中 ]
+
+#### 构建工具
+-[ ] [flow:JAVASCRIPT 静态类型检测器](https://zhenyong.github.io/flowtype/)
