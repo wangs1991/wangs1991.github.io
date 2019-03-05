@@ -10,7 +10,7 @@ export default new vue({
     name: 'markdown',
     data () {
         return {
-            html: require('./webpack-multipage.md')
+            html: require('./markdown.md')
         }
     },
     computed: {

@@ -1,8 +1,13 @@
+require('./js-ast-parse.css')
 import init from '../../assets/js/initial'
 import {getArticleInfo} from '../../assets/js/Utils'
 import '../../components/ArticleRead'
 import articles from '../../data'
-
+const {Parser} = require("acorn")
+const MyParser = Parser.extend(
+    // require("acorn-jsx"),
+    require("acorn-bigint")
+)
 const vue = init()
 
 export default new vue({
@@ -10,12 +15,16 @@ export default new vue({
     name: 'markdown',
     data () {
         return {
-            html: require('./markdown.md')
+            html: require('./markdown.md'),
+            origin: '{} + ""'
         }
     },
     computed: {
         title () {
             return getArticleInfo(window.location.href, articles)[0]
+        },
+        result () {
+            return MyParser.parse(this.origin)
         }
     },
     mounted () {

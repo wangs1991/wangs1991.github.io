@@ -16,6 +16,6 @@ module.exports = [{
     color: '#f00'
 }, {
     id: 1000,
-    label: '功能测试',
+    label: '工具',
     color: '#dfdfdf'
 }]

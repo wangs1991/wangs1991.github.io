@@ -1,0 +1,1 @@
+textarea{display:block;width:100%;min-height:10em;border-radius:5px;border-color:#ddd;background:#efefef;outline:0}textarea:focus{background:#fff;border-color:#ddd;ouline:0}#tree{max-height:50em;line-height:1.5em;font-size:.2rem}#tree pre{font-size:inherit}

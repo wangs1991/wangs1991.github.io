@@ -12,6 +12,12 @@
 <section id="base-panel__window">
     <article-read :title="title">
         <slot>
+            <h3>输入要分析的代码：</h3>
+            <textarea name="" id="" cols="30" rows="10" v-model="origin"></textarea>
+            <h3>词法分析结果如下：</h3>
+            <div id="tree">
+                <pre>{{result}}</pre>
+            </div>
             <div class="markdown-format" v-html="html"></div>
         </slot>
     </article-read>

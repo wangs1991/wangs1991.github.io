@@ -1,5 +1,13 @@
 
 module.exports = [{
+    typeId: 1000,
+    type: '工具',
+    keywords: ['AST', 'js词法分析'],
+    script: true,
+    name: 'JavaScript词法分析器',
+    uri: 'js-ast-parse.html',
+    date: '2019-03-05'
+}, {
     typeId: 1003,
     type: '日常总结',
     keywords: ['博客搭建过程'],

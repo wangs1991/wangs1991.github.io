@@ -1,18 +1,21 @@
 import init from '../../assets/js/initial'
-import '../../components/titleHeader'
-import '../../components/goTop'
-require('./about.css')
+import {getArticleInfo} from '../../assets/js/Utils'
+import articles from '../../data'
+import '../../components/ArticleRead'
 
 const vue = init()
 
 export default new vue({
     el: '#base-panel__window',
-    name: 'about',
+    name: 'markdown',
     data () {
         return {
-            header: {
-                title: '个人信息-关于我们'
-            }
+            html: require('./markdown.md')
+        }
+    },
+    computed: {
+        title () {
+            return getArticleInfo(window.location.href, articles)[0]
         }
     },
     mounted () {
