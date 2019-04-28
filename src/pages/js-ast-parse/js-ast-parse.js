@@ -2,7 +2,7 @@ require('./js-ast-parse.css')
 import init from '../../assets/js/initial'
 import {getArticleInfo} from '../../assets/js/Utils'
 import '../../components/ArticleRead'
-import articles from '../../data'
+const articles = require('../../data.json')
 const {Parser} = require("acorn")
 const MyParser = Parser.extend(
     // require("acorn-jsx"),

@@ -4,11 +4,14 @@ const StylelintWebpackPlugin = require('stylelint-webpack-plugin')
 const webpack = require('webpack')
 const marked = require('marked')
 const renderer = new marked.Renderer()
-const pages = require('./src/data') // 多页面配置新数据
+const utils = require('./utils')
+const pages = utils.getJsonFiles('src/pages')// 多页面配置新数据
 const Info = require('./src/config')
 
+const htmlReg = /\.html$/
+const jsReg = /\.js$/
 
-function resolve (dir) {
+function resolve(dir) {
     return path.join(__dirname, dir)
 }
 
@@ -16,20 +19,43 @@ console.log('==============================================')
 console.log(process.env.NODE_ENV)
 console.log('==============================================')
 
+/*自动生成data文件*/
+utils.writeFile('./src/data.json', (function () {
+    let content = []
+    let path
+    let tmp
+    let prevFolder
+    let curFolder
+
+    pages.forEach(n => {
+        path = n.split('\\')
+        path.pop()
+        curFolder = path[path.length - 1]
+        path = path.join('\\')
+
+        if (path.indexOf('index') < 0 && curFolder !== prevFolder) {
+            prevFolder = curFolder
+            tmp = utils.getFileContent(path + '\\config.json')
+            tmp && content.push(tmp)
+        }
+    })
+
+    return JSON.stringify(content)
+})())
+
 module.exports = {
     entry: (function () {
-        let ret = {
-            app: './src/pages/index/index.js'
-        }
+        let ret = {}
         let chunk
 
-        // 根据页面数据遍历出入口的集合
-        pages.filter(n => {
-            return !!n.script
-        }).forEach(n => {
-            chunk = n.uri.split('.')[0]
+        ret.app = './src/pages/index/index.js'
 
-            ret[chunk] = __dirname + '/src/pages/' + chunk + '/' + chunk + '.js'
+        pages.filter(n => {
+            return jsReg.test(n)
+        }).forEach(n => {
+            chunk = n.split('\\').pop().split('.').shift()
+
+            ret[chunk] = './' + n
         })
 
         return ret // 返回多个页面入口
@@ -41,20 +67,30 @@ module.exports = {
     plugins: [
         ...(function () { // 匿名自执行方法遍历页面数据，生成到模块的html文件到dist/html/[name]/name.html
             let ret = []
+            let name
             let folder
-            // let exec = /\.html/
 
-            pages.forEach(n => {
-                folder = n.uri.split('.')[0]
+            pages.filter(n => {
+                return htmlReg.test(n)
+            }).forEach(n => {
+                let tmp = n.split('\\')
+
+                name = tmp.pop()
+                folder = tmp.pop()
 
                 ret.push(new HtmlWebpackPlugin({
-                    filename: __dirname + '/dist/html/' + n.uri,
-                    template: __dirname + '/src/pages/' + folder + '/' + n.uri,
+                    filename: __dirname + '/dist/html/' + name,
+                    template: n,
                     title: (function () {
-                        return n.name + ' | ' + Info.title
+                        if (folder === 'index') {
+                            return ''
+                        }
+                        let config = utils.getFileContent('./src/pages/' + folder + '/config.json')
+
+                        return config.name + ' | ' + Info.title
                     })(),
                     description: Info.description,
-                    chunks: ['common', folder],
+                    chunks: ['common', name.split('.').shift()],
                     minify:
                         {
                             removeComments: true,//删除注释
@@ -63,12 +99,11 @@ module.exports = {
                         }
                 }))
             })
-
             return ret
         })(),
         new StylelintWebpackPlugin({
             context: 'src',
-            configFile: path.resolve(__dirname,'./.stylelintrc'),
+            configFile: path.resolve(__dirname, './.stylelintrc'),
             failOnError: true,
             lintDirtyModulesOnly: true,
             syntax: 'scss'
@@ -87,7 +122,7 @@ module.exports = {
                         options: {
                             langPrefix: '',
                             renderer: renderer,
-                            highlight: function(code) {
+                            highlight: function (code) {
                                 return require('highlight.js').highlightAuto(code).value;
                             },
                             pedantic: false,

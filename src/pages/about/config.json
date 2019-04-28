@@ -1,0 +1,9 @@
+{
+  "typeId": 1000,
+  "type": "功能测试",
+  "keywords": [],
+  "script": true,
+  "name": "个人信息",
+  "uri": "about.html",
+  "date": "2019-01-26"
+}

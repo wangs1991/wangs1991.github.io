@@ -1,7 +1,7 @@
 import init from '../../assets/js/initial'
 import {getArticleInfo} from '../../assets/js/Utils'
 import '../../components/ArticleRead'
-import articles from '../../data'
+const articles = require('../../data.json')
 
 const vue = init()
 

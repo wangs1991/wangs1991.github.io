@@ -1,0 +1,10 @@
+{
+  "typeId": 1000,
+  "type": "功能测试",
+  "keywords": [
+    "REDME"
+  ],
+  "script": true,
+  "name": "README",
+  "uri": "readme.html"
+}

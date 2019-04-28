@@ -1,10 +1,12 @@
-import menu from '../../data'
+const menu = require('../../data.json')
 import Labels from '../../static/labels'
 import init from '../../assets/js/initial'
 import '../../components/titleHeader'
 import '../../components/goTop'
 import {serilizeUrl, getUriRoot} from '../../assets/js/Utils'
 require('./index.css')
+
+console.log(menu)
 
 const vue = init()
 const __BASEURI = getUriRoot()

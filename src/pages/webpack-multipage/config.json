@@ -1,0 +1,11 @@
+{
+  "typeId": 1004,
+  "type": "webpack",
+  "keywords": [
+    "多页构建配置"
+  ],
+  "script": true,
+  "name": "webpack 4.0从0构建多页应用打包配置环境详解",
+  "uri": "webpack-multipage.html",
+  "date": "2019-01-28"
+}
