@@ -31,9 +31,10 @@ utils.writeFile('README.md', (function () {
 
     string = []
     string.push('### 目录')
+    string.push('+ [首页]('+ Info.host +')')
 
     jsonfyPage.forEach(n => {
-        string.push('+ ['+ n.name +'](./'+ n.uri +')')
+        string.push('+ ['+ n.name +']('+ Info.host + n.uri +')')
     })
 
     return string.join('\n')
