@@ -33,5 +33,26 @@ module.exports = {
                 throw err;
             }
         });
+    },
+    getPagesJson (pages) {
+        let content = []
+        let path
+        let tmp
+        let prevFolder
+        let curFolder
+
+        pages.forEach(n => {
+            path = n.split('\\')
+            path.pop()
+            curFolder = path[path.length - 1]
+            path = path.join('\\')
+
+            if (path.indexOf('index') < 0 && curFolder !== prevFolder) {
+                prevFolder = curFolder
+                tmp = this.getFileContent(path + '\\config.json')
+                tmp && content.push(tmp)
+            }
+        })
+        return content
     }
 }

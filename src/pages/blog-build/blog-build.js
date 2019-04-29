@@ -10,7 +10,7 @@ export default new vue({
     name: 'README',
     data () {
         return {
-            html: require('../../../README.md')
+            html: require('./markdown.md')
         }
     },
     computed: {

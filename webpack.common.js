@@ -19,28 +19,24 @@ console.log('==============================================')
 console.log(process.env.NODE_ENV)
 console.log('==============================================')
 
+
+let jsonfyPage = utils.getPagesJson(pages)
 /*自动生成data文件*/
 utils.writeFile('./src/data.json', (function () {
-    let content = []
-    let path
-    let tmp
-    let prevFolder
-    let curFolder
+    return JSON.stringify(jsonfyPage)
+})())
+/*自动生成readme文件*/
+utils.writeFile('README.md', (function () {
+    let string
 
-    pages.forEach(n => {
-        path = n.split('\\')
-        path.pop()
-        curFolder = path[path.length - 1]
-        path = path.join('\\')
+    string = []
+    string.push('### 目录')
 
-        if (path.indexOf('index') < 0 && curFolder !== prevFolder) {
-            prevFolder = curFolder
-            tmp = utils.getFileContent(path + '\\config.json')
-            tmp && content.push(tmp)
-        }
+    jsonfyPage.forEach(n => {
+        string.push('+ ['+ n.name +'](./'+ n.uri +')')
     })
 
-    return JSON.stringify(content)
+    return string.join('\n')
 })())
 
 module.exports = {
