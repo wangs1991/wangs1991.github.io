@@ -12,7 +12,9 @@
 <section id="base-panel__window">
     <article-read :title="title">
         <slot>
-            <div class="markdown-format" v-html="html"></div>
+            <lib-item v-for="(item, idx) in libs"
+                      :key="idx"
+                      :data="item"></lib-item>
         </slot>
     </article-read>
 </section>

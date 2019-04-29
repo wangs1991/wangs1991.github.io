@@ -1,6 +1,7 @@
 import init from '../../assets/js/initial'
 import {getArticleInfo} from '../../assets/js/Utils'
 import '../../components/ArticleRead'
+import '../../components/LibItem'
 const articles = require('../../data.json')
 
 const vue = init()
@@ -10,7 +11,7 @@ export default new vue({
     name: 'markdown',
     data () {
         return {
-            html: require('./markdown.md')
+            libs: require('./data.js')
         }
     },
     computed: {

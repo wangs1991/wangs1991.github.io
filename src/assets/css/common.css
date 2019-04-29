@@ -288,6 +288,67 @@ html, body, #base-panel__window {
   }
 }
 
+/*lib-itemZU建样式*/
+.lib-item{
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 10px;
+
+  .lib-title{
+    font-size: 16px;
+    color: #2e3135;
+    line-height: 1.5em;
+    padding: 6px 12px 6px 15px;
+    margin: 0;
+    &:before{
+      content: '';
+      float: left;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      border: 1px solid $theme-color-1-70;
+      margin-left: -15px;
+      margin-top: 9px;
+    }
+  }
+  .lib-doc{
+    @include clear();
+    @include scroller(4px);
+    height: 0;
+    overflow: hidden;
+    background: #efefef;
+  }
+
+  .lib-down{
+    display: none;
+    font-size: 16px;
+    float: right;
+    width: 1.5em;
+    height: 1.5em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-background-size: 1.2em;
+    background-size: 1.2em;
+  }
+
+  &.lib-item__open{
+    margin-top: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+    .lib-title:before{
+      display: none;
+    }
+    .lib-doc{
+      height: auto;
+      padding: 10px;
+      max-height: 180px;
+      overflow: auto;
+    }
+    .lib-down{
+      display: inline-block;
+    }
+  }
+}
+
 //移动端query
 @media only screen
 and (min-device-width: 320px)
