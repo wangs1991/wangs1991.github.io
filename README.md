@@ -54,7 +54,7 @@ so要自己实现一个博客模板工具的话只需要可以自动把子页的
   |  |     |---- index.css
   |  |     |---- index.md   // 支持md语法，可以使用md编辑内容，如果用html自定义则可以无这个文件
   |  |---- static           // 静态/模拟json数据
-  |  |---- config.js        // 个人数据的配置信息：用户名，页面title等
+  |  |---- config.json        // 个人数据的配置信息：用户名，页面title等
   |  |---- data.js           // 博客页面数据集合，需手动维护
   |---- .babelrc
   |---- .gitingnore
@@ -62,7 +62,7 @@ so要自己实现一个博客模板工具的话只需要可以自动把子页的
   |---- _config.yml
   |---- index.html          // gitpage 指向首页
   |---- package.json
-  |---- postcss.config.js   // postcss 配置
+  |---- postcss.config.json   // postcss 配置
   |---- README.md           // github 生成的md说明文件，项目说明
   |---- webpack.common.js
   |---- webbpack.dev.js
@@ -320,7 +320,7 @@ export default new vue({
   |  |     |---- index.css
   |  |     |---- index.md   // 支持md语法，可以使用md编辑内容，如果用html自定义则可以无这个文件
   |  |---- static           // 静态\模拟json数据
-  |  |---- config.js        // 个人数据的配置信息：用户名，页面title等
+  |  |---- config.json        // 个人数据的配置信息：用户名，页面title等
   |  |---- data.js           // 博客页面数据集合，需手动维护
   |  |---- template
   |  |  |---- html          // html 类型博客模板
@@ -331,7 +331,7 @@ export default new vue({
   |---- _config.yml
   |---- index.html          // * 由webpack打包成成，gitpage默认以这个文件为入口，见webpack.prod.js
   |---- package.json
-  |---- postcss.config.js   // postcss 配置
+  |---- postcss.config.json   // postcss 配置
   |---- README.md           // github 生成的md说明文件，项目说明
   |---- webpack.common.js
   |---- webbpack.dev.js

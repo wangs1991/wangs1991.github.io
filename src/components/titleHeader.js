@@ -2,6 +2,7 @@ import Vue from 'vue/dist/vue'
 // 标签数据
 import Labels from '../static/labels'
 import {serilizeUrl, getUriRoot} from '../assets/js/Utils'
+
 const Info = require('../config')
 
 // 全局组件的注册与使用
@@ -54,7 +55,7 @@ Vue.component('titleHeader', {
         }
     },
     computed: {
-        scroller () {
+        scroller() {
             let ret = 0
 
             this.labels.forEach(n => {
@@ -68,19 +69,19 @@ Vue.component('titleHeader', {
                 width: ret
             }
         },
-        uriRoot () {
+        uriRoot() {
             return getUriRoot()
         },
-        info () {
+        info() {
             return Info
         }
     },
     methods: {
-        linkTo (item) {
+        linkTo(item) {
             window.location.href = window.location.origin + '?type=' + item.id
         }
     },
-    mounted () {
+    mounted() {
         this.labels.splice(1, 0, ...Labels)
         this.active = serilizeUrl(window.location.href, 0).type || 0
     }

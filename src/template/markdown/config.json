@@ -1,0 +1,12 @@
+{
+  "typeId": 1005,
+  "type": "插件工具类",
+  "keywords": [
+    "插件工具类",
+    "storage"
+  ],
+  "script": true,
+  "name": "常用插件工具类集合",
+  "uri": "libs-gather.html",
+  "date": "2019-04-28"
+}

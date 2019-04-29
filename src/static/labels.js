@@ -1,4 +1,8 @@
 module.exports = [{
+    id: 1005,
+    label: '插件工具类',
+    color: '#dfdfdf'
+}, {
     id: 1004,
     label: 'webpack',
     color: 'rgba(16,58,177,.5)'

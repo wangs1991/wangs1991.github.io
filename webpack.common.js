@@ -64,6 +64,11 @@ module.exports = {
         filename: "assets/js/[name].[hash].js",    // js文件输出到dist/script/name.hash.js
         path: path.resolve(__dirname, './dist/')
     },
+    resolve: {
+        alias: {
+            '@': resolve('src')
+        }
+    },
     plugins: [
         ...(function () { // 匿名自执行方法遍历页面数据，生成到模块的html文件到dist/html/[name]/name.html
             let ret = []

@@ -210,6 +210,7 @@ html, body, #base-panel__window {
   height: .50rem;
   border-radius: 50%;
   border: .03rem solid $theme-color-2;
+  background-color: #dedede;
   background-image: url('../../assets/images/avator.jpg');
   background-position: center center;
   background-repeat: no-repeat;
@@ -262,6 +263,7 @@ html, body, #base-panel__window {
       width: .85rem;
       height: .85rem;
       background-image: url('../../assets/images/avator.jpg');
+      background-color: #dedede;
       background-repeat: no-repeat;
       -webkit-background-size: cover;
       background-size: cover;
