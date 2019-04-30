@@ -11,7 +11,7 @@
 *   *expires: Number (可选，不设置为永久有效)
 * }
 * 读取到的数据：
-* name => Any 存入的value值，按照原来的格式返回，过期或者不存在会返回null
+* name => Any 存入的value值，按照原来的格式返回，过期或者不存在会返回undefined
 *
 * */
 
@@ -37,7 +37,7 @@ export const storage = {
             data.expires = expires
         }
         localStorage.setItem(key, JSON.stringify(data))
-        return !!this.getItem(key).data
+        return !!this.getItem(key)
     },
     /*
     * 读取数据
@@ -50,13 +50,17 @@ export const storage = {
 
         res = localStorage.getItem(key)
         if (!res) {
-            return null
+            return undefined
         }
 
         res = JSON.parse(res)
         /*如果expires过期，或者force是true的话就是一次性数据*/
-        if (res.expires && (+new Date() - res.timestamp) >= res.expires * 24 * 60 * 60 * 1000) {
-            res = null
+        if (res.expires !== undefined && (+new Date() - res.timestamp) >= res.expires * 24 * 60 * 60 * 1000) {
+            res = {
+                expires: res.expires,
+                timestamp: res.timestamp,
+                data: undefined
+            }
         }
         if (force === true) {
             localStorage.removeItem(key)
@@ -101,12 +105,12 @@ export const globalStorage = (function () {
 
     const getItem = (key, remove) => {
         let GLOBAL = getCache()
-        let ret = GLOBAL[key]
-        let res
+        let ret
 
         if (!key) {
-            return false
+            return undefined
         }
+        ret = GLOBAL[key]
         if (remove) {
             delete GLOBAL[key]
         }
@@ -121,12 +125,14 @@ export const globalStorage = (function () {
         } else {
             GLOBAL = {}
         }
+        return true
     }
 
     const clear = () => {
         let GLOBAL = getCache()
 
         GLOBAL = {}
+        return true
     }
 
     return {

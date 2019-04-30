@@ -1,12 +1,13 @@
 {
   "typeId": 1005,
-  "type": "插件工具类",
+  "type": "插件工具类页面示例",
   "keywords": [
     "插件工具类",
-    "storage"
+    "示例"
   ],
   "script": true,
-  "name": "常用插件工具类集合",
+  "name": "插件工具类页面示例",
   "uri": "libs-gather.html",
-  "date": "2019-04-28"
+  "date": "2019-04-28",
+  "isPrivate": false
 }

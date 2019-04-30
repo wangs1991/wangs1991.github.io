@@ -1,9 +1,0 @@
-{
-  "typeId": 1003,
-  "type": "日常总结",
-  "keywords": ["博客搭建过程"],
-  "script": true,
-  "name": "记录依赖GitHub搭建博客的过程",
-  "uri": "blog-build.html",
-  "date": "2019-01-28"
-}

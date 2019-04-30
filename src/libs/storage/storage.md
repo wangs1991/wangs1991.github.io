@@ -20,11 +20,11 @@ storage.setItem('name', 'Storage', 1)
 
 /*获取数据*/
 storage.getItem('name')
-// <·  'Storage' || null (过期或者不存在)
+// <·  'Storage' || undefined (过期或者不存在)
 
 /*获取数据并删除数据*/
 storage.getItem('name', true)
-// <·  'Storage' || null (过期或者不存在)
+// <·  'Storage' || undefined (过期或者不存在)
 
 /*清除某个数据*/
 storage.removeItem('name')

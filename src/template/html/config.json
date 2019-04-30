@@ -8,5 +8,6 @@
   "script": true,
   "name": "常用插件工具类集合",
   "uri": "libs-gather.html",
-  "date": "2019-04-28"
+  "date": "2019-04-28",
+  "isPrivate": false
 }

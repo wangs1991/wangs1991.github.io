@@ -2,9 +2,9 @@
   "typeId": 1000,
   "type": "功能测试",
   "keywords": [
-    "REDME"
+    "DEMO"
   ],
   "script": true,
-  "name": "README示例",
+  "name": "组件类",
   "uri": "readme.html"
 }
