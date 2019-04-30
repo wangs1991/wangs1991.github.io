@@ -2,55 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="129e91e8-039e-41f7-ae7f-ccd5cf3bc56f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/assets/js/libs-gather.e924bfcf5974c98dc956.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/assets/js/readme.e924bfcf5974c98dc956.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/pages/libs-gather/data.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/js/libs-gather.5b812cd3aa7e4b8215a8.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/assets/js/readme.5b812cd3aa7e4b8215a8.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/pages/blog-build/blog-build.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/pages/blog-build/blog-build.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/pages/blog-build/config.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/pages/blog-build/markdown.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/pages/webpack-multipage/config.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/pages/webpack-multipage/markdown.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/pages/webpack-multipage/webpack-multipage.html" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/html/about.html" afterPath="$PROJECT_DIR$/dist/html/about.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/html/blog-build.html" afterPath="$PROJECT_DIR$/dist/html/blog-build.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/html/collect-list.html" afterPath="$PROJECT_DIR$/dist/html/collect-list.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/html/h5-capture.html" afterPath="$PROJECT_DIR$/dist/html/h5-capture.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/html/html.html" afterPath="$PROJECT_DIR$/dist/html/html.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/html/index.html" afterPath="$PROJECT_DIR$/dist/html/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/html/js-ast-parse.html" afterPath="$PROJECT_DIR$/dist/html/js-ast-parse.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/html/libs-gather.html" afterPath="$PROJECT_DIR$/dist/html/libs-gather.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/html/readme.html" afterPath="$PROJECT_DIR$/dist/html/readme.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/html/webpack-multipage.html" afterPath="$PROJECT_DIR$/dist/html/webpack-multipage.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/css/common.css" afterPath="$PROJECT_DIR$/src/assets/css/common.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data.json" afterPath="$PROJECT_DIR$/src/data.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/libs/storage/storage.js" afterPath="$PROJECT_DIR$/src/libs/storage/storage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/libs/storage/storage.md" afterPath="$PROJECT_DIR$/src/libs/storage/storage.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/about/config.json" afterPath="$PROJECT_DIR$/src/pages/about/config.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/readme/config.json" afterPath="$PROJECT_DIR$/src/pages/readme/config.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/template/html/config.json" afterPath="$PROJECT_DIR$/src/template/html/config.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/template/markdown/config.json" afterPath="$PROJECT_DIR$/src/template/markdown/config.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack.common.js" afterPath="$PROJECT_DIR$/webpack.common.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack.dev.js" afterPath="$PROJECT_DIR$/webpack.dev.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/dist/assets/css-ast-parse.5b812cd3aa7e4b8215a8.css" afterPath="$PROJECT_DIR$/dist/assets/css-ast-parse.e924bfcf5974c98dc956.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/dist/assets/css/common.5b812cd3aa7e4b8215a8.css" afterPath="$PROJECT_DIR$/dist/assets/css/common.e924bfcf5974c98dc956.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/dist/assets/js/about.5b812cd3aa7e4b8215a8.js" afterPath="$PROJECT_DIR$/dist/assets/js/about.e924bfcf5974c98dc956.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/dist/assets/js/app.5b812cd3aa7e4b8215a8.js" afterPath="$PROJECT_DIR$/dist/assets/js/app.e924bfcf5974c98dc956.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/dist/assets/js/blog-build.5b812cd3aa7e4b8215a8.js" afterPath="$PROJECT_DIR$/dist/assets/js/blog-build.e924bfcf5974c98dc956.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/dist/assets/js/collect-list.5b812cd3aa7e4b8215a8.js" afterPath="$PROJECT_DIR$/dist/assets/js/collect-list.e924bfcf5974c98dc956.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/dist/assets/js/common.5b812cd3aa7e4b8215a8.js" afterPath="$PROJECT_DIR$/dist/assets/js/common.e924bfcf5974c98dc956.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/dist/assets/js/data.5b812cd3aa7e4b8215a8.js" afterPath="$PROJECT_DIR$/dist/assets/js/data.e924bfcf5974c98dc956.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/dist/assets/js/h5-capture.5b812cd3aa7e4b8215a8.js" afterPath="$PROJECT_DIR$/dist/assets/js/h5-capture.e924bfcf5974c98dc956.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/dist/assets/js/html.5b812cd3aa7e4b8215a8.js" afterPath="$PROJECT_DIR$/dist/assets/js/html.e924bfcf5974c98dc956.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/dist/assets/js/index.5b812cd3aa7e4b8215a8.js" afterPath="$PROJECT_DIR$/dist/assets/js/index.e924bfcf5974c98dc956.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/dist/assets/js/js-ast-parse.5b812cd3aa7e4b8215a8.js" afterPath="$PROJECT_DIR$/dist/assets/js/js-ast-parse.e924bfcf5974c98dc956.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/dist/assets/js/webpack-multipage.5b812cd3aa7e4b8215a8.js" afterPath="$PROJECT_DIR$/dist/assets/js/webpack-multipage.e924bfcf5974c98dc956.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/pages/webpack-multipage/webpack-multipage.js" afterPath="$PROJECT_DIR$/src/pages/libs-gather/libs-gather.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -69,62 +22,6 @@
     <splitter split-orientation="vertical" split-proportion="0.6001669">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-          <file leaf-file-name="webpack.common.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/webpack.common.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="350">
-                  <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-                  <folding>
-                    <marker date="1556611965112" expanded="true" signature="1138:1144" ph="{...}" />
-                    <marker date="1556611965112" expanded="true" signature="1138:1177" ph="{...}" />
-                    <marker date="1556611965112" expanded="true" signature="1200:6259" ph="{...}" />
-                    <marker date="1556611965112" expanded="true" signature="1226:1545" ph="{...}" />
-                    <marker date="1556611965112" expanded="true" signature="1342:1386" ph="{...}" />
-                    <marker date="1556611965112" expanded="true" signature="1401:1506" ph="{...}" />
-                    <marker date="1556611965112" expanded="true" signature="1562:1704" ph="{&quot;filename&quot;: &quot;assets/js/[name].[hash].js&quot;...}" />
-                    <marker date="1556611965112" expanded="true" signature="1719:1785" ph="{...}" />
-                    <marker date="1556611965112" expanded="true" signature="1736:1779" ph="{...}" />
-                    <marker date="1556611965112" expanded="false" signature="1800:3320" ph="[...]" />
-                    <marker date="1556611965112" expanded="true" signature="1826:3069" ph="{...}" />
-                    <marker date="1556611965112" expanded="true" signature="1985:2039" ph="{...}" />
-                    <marker date="1556611965112" expanded="true" signature="2054:3035" ph="{...}" />
-                    <marker date="1556611965112" expanded="true" signature="2213:3019" ph="{&quot;template&quot;: n...}" />
-                    <marker date="1556611965112" expanded="true" signature="2352:2654" ph="{...}" />
-                    <marker date="1556611965112" expanded="true" signature="2402:2467" ph="{...}" />
-                    <marker date="1556611965112" expanded="true" signature="2827:3001" ph="{...}" />
-                    <marker date="1556611965112" expanded="true" signature="3109:3313" ph="{&quot;context&quot;: 'src'...}" />
-                    <marker date="1556611965112" expanded="true" signature="3334:6257" ph="{...}" />
-                    <marker date="1556611965112" expanded="true" signature="3351:6251" ph="[...]" />
-                    <marker date="1556611965112" expanded="true" signature="3365:4317" ph="{...}" />
-                    <marker date="1556611965112" expanded="true" signature="3419:4303" ph="[...]" />
-                    <marker date="1556611965112" expanded="true" signature="3441:3510" ph="{&quot;loader&quot;: &quot;html-loader&quot;...}" />
-                    <marker date="1556611965112" expanded="true" signature="3532:4285" ph="{&quot;loader&quot;: &quot;markdown-loader&quot;...}" />
-                    <marker date="1556611965112" expanded="true" signature="3618:4263" ph="{&quot;langPrefix&quot;: ''...}" />
-                    <marker date="1556611965112" expanded="true" signature="3767:3888" ph="{...}" />
-                    <marker date="1556611965112" expanded="true" signature="4331:4631" ph="{...}" />
-                    <marker date="1556611965112" expanded="true" signature="4385:4496" ph="[...]" />
-                    <marker date="1556611965112" expanded="true" signature="4407:4478" ph="{&quot;loader&quot;: 'babel-loader'...}" />
-                    <marker date="1556611965112" expanded="true" signature="4645:5164" ph="{...}" />
-                    <marker date="1556611965112" expanded="true" signature="4700:5061" ph="[...]" />
-                    <marker date="1556611965112" expanded="true" signature="4722:4792" ph="{&quot;loader&quot;: 'style-loader'...}" />
-                    <marker date="1556611965112" expanded="true" signature="4794:4969" ph="{&quot;loader&quot;: 'css-loader'...}" />
-                    <marker date="1556611965112" expanded="true" signature="4875:4947" ph="{...}" />
-                    <marker date="1556611965112" expanded="true" signature="4971:5043" ph="{&quot;loader&quot;: 'postcss-loader'...}" />
-                    <marker date="1556611965112" expanded="true" signature="5178:5703" ph="{&quot;loader&quot;: 'url-loader'...}" />
-                    <marker date="1556611965112" expanded="true" signature="5298:5689" ph="{...}" />
-                    <marker date="1556611965112" expanded="true" signature="5372:5671" ph="{...}" />
-                    <marker date="1556611965112" expanded="true" signature="5441:5542" ph="{...}" />
-                    <marker date="1556611965112" expanded="true" signature="5548:5649" ph="{...}" />
-                    <marker date="1556611965112" expanded="true" signature="5717:6241" ph="{&quot;loader&quot;: 'url-loader'...}" />
-                    <marker date="1556611965112" expanded="true" signature="5838:6227" ph="{...}" />
-                    <marker date="1556611965112" expanded="true" signature="5912:6209" ph="{...}" />
-                    <marker date="1556611965112" expanded="true" signature="5981:6081" ph="{...}" />
-                    <marker date="1556611965112" expanded="true" signature="6087:6187" ph="{...}" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="common.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/assets/css/common.css">
               <provider selected="true" editor-type-id="text-editor">
@@ -147,8 +44,18 @@
           <file leaf-file-name="webpack.dev.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/webpack.dev.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="142">
-                  <caret line="9" column="33" lean-forward="true" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+                <state relative-caret-position="467">
+                  <caret line="20" column="72" lean-forward="true" selection-start-line="20" selection-start-column="72" selection-end-line="20" selection-end-column="72" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/.gitignore">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="50">
+                  <caret line="2" column="5" lean-forward="true" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
                   <folding />
                 </state>
               </provider>
@@ -174,7 +81,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="config.json" pinned="false" current-in-tab="true">
+          <file leaf-file-name="config.json" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/pages/readme/config.json">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="225">
@@ -187,8 +94,8 @@
           <file leaf-file-name="config.json" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/template/html/config.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="275">
-                  <caret line="11" column="2" lean-forward="false" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="20" />
+                <state relative-caret-position="300">
+                  <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
                   <folding />
                 </state>
               </provider>
@@ -197,8 +104,8 @@
           <file leaf-file-name="config.json" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/template/markdown/config.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="275">
-                  <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+                <state relative-caret-position="300">
+                  <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
                   <folding />
                 </state>
               </provider>
@@ -343,7 +250,6 @@
         <option value="$PROJECT_DIR$/src/data.json" />
         <option value="$PROJECT_DIR$/src/config.js" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/pages/collect-list/markdown.md" />
         <option value="$PROJECT_DIR$/webpack.common.js" />
         <option value="$PROJECT_DIR$/src/pages/about/config.json" />
@@ -359,6 +265,7 @@
         <option value="$PROJECT_DIR$/src/pages/libs-gather/data.js" />
         <option value="$PROJECT_DIR$/src/pages/libs-gather/config.json" />
         <option value="$PROJECT_DIR$/src/pages/readme/config.json" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -551,7 +458,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="183390000" />
+    <option name="totallyTimeSpent" value="184311000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1089" y="-9" width="1098" height="1900" extended-state="6" />
@@ -734,13 +641,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
           <caret line="5" column="1" lean-forward="false" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="1" column="7" lean-forward="false" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -939,34 +839,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/template/html/config.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="2" lean-forward="false" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/libs/storage/storage.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="3" column="18" lean-forward="true" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/template/markdown/config.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webpack.dev.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="9" column="33" lean-forward="true" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
           <folding />
         </state>
       </provider>
@@ -995,10 +871,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/template/html/config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/template/markdown/config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/libs-gather/config.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack.dev.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="20" column="72" lean-forward="true" selection-start-line="20" selection-start-column="72" selection-end-line="20" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="5" lean-forward="true" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
           <folding />
         </state>
       </provider>
