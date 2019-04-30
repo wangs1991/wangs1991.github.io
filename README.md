@@ -1,6 +1,5 @@
 ### 目录
 + [首页](https://wangs1991.github.io/dist/html/)
-+ [个人信息](https://wangs1991.github.io/dist/html/about.html)
 + [记录依赖GitHub搭建博客的过程](https://wangs1991.github.io/dist/html/blog-build.html)
 + [优秀网络资源收藏](https://wangs1991.github.io/dist/html/collect-list.html)
 + [一个人脸认证H5项目获得的的知识点](https://wangs1991.github.io/dist/html/h5-capture.html)

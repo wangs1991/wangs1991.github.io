@@ -28,3 +28,5 @@ ljianshu：打造优质前端博客[gihub博客](https://github.com/ljianshu/Blo
 
 #### 构建工具
 -[ ] [flow:JAVASCRIPT 静态类型检测器](https://zhenyong.github.io/flowtype/)
+
+-[ ] [webpack打包vendor文件体积过大](https://blog.csdn.net/qq_26026975/article/details/79381555)

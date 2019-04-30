@@ -23,7 +23,7 @@ console.log('==============================================')
 let jsonfyPage = utils.getPagesJson(pages)
 /*自动生成data文件*/
 utils.writeFile('./src/data.json', (function () {
-    return JSON.stringify(jsonfyPage)
+    return JSON.stringify(jsonfyPage.filter(n => !n.isPrivate))
 })())
 /*自动生成readme文件*/
 utils.writeFile('README.md', (function () {
@@ -34,7 +34,9 @@ utils.writeFile('README.md', (function () {
     string.push('+ [首页]('+ Info.host +')')
 
     jsonfyPage.forEach(n => {
-        string.push('+ ['+ n.name +']('+ Info.host + n.uri +')')
+        if (!n.isPrivate) {
+            string.push('+ ['+ n.name +']('+ Info.host + n.uri +')')
+        }
     })
 
     return string.join('\n')
