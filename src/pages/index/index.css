@@ -52,3 +52,21 @@
     }
   }
 }
+
+/*空列表样式*/
+.empty-list{
+  text-align: center;
+  .empty-icon{
+    margin: 2rem auto .40rem;
+    width: 1rem;
+    height: 1rem;
+    background-image: url('../../assets/images/empty-list.png');
+    -webkit-background-size: contain;
+    background-size: contain;
+    opacity: .3;
+  }
+  .empty-msg {
+    font-size: .22rem;
+    color: #cacaca;
+  }
+}

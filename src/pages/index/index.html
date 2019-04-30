@@ -15,7 +15,7 @@
 
     <!--内容区域-->
     <section class="base-panel__content" id="scrollerPanel">
-        <ul class="demo-list__entry">
+        <ul class="demo-list__entry" v-if="menus && menus.length > 0">
             <li v-for="(item, idx) in menus"
                 :key="idx">
                 <a :href="baseUri + item.uri">
@@ -31,6 +31,12 @@
                 </div>
             </li>
         </ul>
+        <div class="empty-list" v-else>
+            <div class="empty-icon"> </div>
+            <div class="empty-msg">
+                Ooops, 这个分类还没文章 ...
+            </div>
+        </div>
     </section>
 
     <back-top></back-top>
