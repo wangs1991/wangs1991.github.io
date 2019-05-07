@@ -5,11 +5,11 @@ const webpack = require('webpack')
 const marked = require('marked')
 const renderer = new marked.Renderer()
 const utils = require('./utils')
-const pages = utils.getJsonFiles('src/pages')// 多页面配置新数据
 const Info = require('./src/config')
 
 const htmlReg = /\.html$/
 const jsReg = /\.js$/
+const pages = utils.getJsonFiles('src/pages')// 多页面配置新数据
 
 function resolve(dir) {
     return path.join(__dirname, dir)
@@ -19,28 +19,44 @@ console.log('==============================================')
 console.log(process.env.NODE_ENV)
 console.log('==============================================')
 
+;(function () {
+    /*自动生成页面相关的文件*/
+    let jsonfyPage = utils.getPagesJson(pages)
 
-let jsonfyPage = utils.getPagesJson(pages)
-/*自动生成data文件*/
-utils.writeFile('./src/data.json', (function () {
-    return JSON.stringify(jsonfyPage.filter(n => !n.isPrivate))
-})())
-/*自动生成readme文件*/
-utils.writeFile('README.md', (function () {
-    let string
+    /*自动生成data文件*/
+    utils.writeFile('./src/data.json', (function () {
+        return JSON.stringify(jsonfyPage.filter(n => !n.isPrivate))
+    })())
 
-    string = []
-    string.push('### 目录')
-    string.push('+ [首页]('+ Info.host +')')
 
-    jsonfyPage.forEach(n => {
-        if (!n.isPrivate) {
-            string.push('+ ['+ n.name +']('+ Info.host + n.uri +')')
-        }
-    })
+    /*自动生成readme文件*/
+    utils.writeFile('README.md', (function () {
+        let string
 
-    return string.join('\n')
-})())
+        string = []
+        string.push('### 目录')
+        string.push('+ [首页]('+ Info.host +')')
+
+        jsonfyPage.forEach(n => {
+            if (!n.isPrivate) {
+                string.push('+ ['+ n.name +']('+ Info.host + n.uri +')')
+            }
+        })
+
+        return string.join('\n')
+    })())
+})();
+
+;(function () {
+    /*自动生成组件库列表相关的文件*/
+    const libs = utils.getJsonFiles('src/libs')
+    let jsonfyPage = utils.getPagesJson(libs)
+
+    /*自动生成data文件*/
+    utils.writeFile('./src/libs/data.json', (function () {
+        return JSON.stringify(jsonfyPage.filter(n => !n.isPrivate))
+    })())
+})();
 
 module.exports = {
     entry: (function () {

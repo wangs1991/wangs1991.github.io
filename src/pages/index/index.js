@@ -43,6 +43,17 @@ export default new vue({
         data.forEach(n => {
             n.labelColor = OjectLabels[n.typeId].color
         })
+        data.sort(function (a, b) {
+            console.log(a, b)
+            console.warn('-------------')
+            if (a.date && b.date) {
+                var adate = a.date.split('-').join('')
+                var bdate = b.date.split('-').join('')
+                return bdate - adate
+            } else {
+                return 1
+            }
+        })
 
         this.menus.splice(0, this.menus.length, ...data)
     },

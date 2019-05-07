@@ -1,0 +1,13 @@
+{
+  "typeId": 1003,
+  "type": "日常总结",
+  "keywords": [
+    "日常总结",
+    "git bash",
+    "笔记"
+  ],
+  "script": true,
+  "name": "git指令速查 · 常见问题及解决方案",
+  "uri": "git-bash.html",
+  "date": "2019-05-07"
+}
