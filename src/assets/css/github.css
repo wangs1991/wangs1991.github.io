@@ -87,11 +87,13 @@ div.search-form .autocomplete-results a:hover {
 }
 
 .markdown-format h3 {
-  color: #325d72;
+  //color: #325d72;
   font-weight: 700;
   font-size: 24px;
   margin: 1.5em 0 1em;
-  //border-bottom: 1px solid #ddd;
+  line-height: 1.5em;
+  border-bottom: 1px solid #325d72;
+  padding-bottom: .05rem;
 }
 
 .markdown-format h4 {
@@ -1088,7 +1090,7 @@ h2 span.warning {
 
 h3 {
   font-size: 18px;
-  color: #325d72;
+  //color: #325d72;
   margin: 10px 0 5px
 }
 

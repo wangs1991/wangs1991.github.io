@@ -13,6 +13,8 @@ module.exports = merge(common, {
         port: 8040,
         // contentBase: ['./dist'],
         inline: true,
+        lazy: false,
+        open: false,
         hot: true
     },
     plugins: [

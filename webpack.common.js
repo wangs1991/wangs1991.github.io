@@ -25,6 +25,11 @@ console.log('==============================================')
 
     /*自动生成data文件*/
     utils.writeFile('./src/data.json', (function () {
+
+        console.log('--------------------------------------')
+        console.log('/    ', '总共检索到' + jsonfyPage.length + '条文章', '     /')
+        console.log('--------------------------------------')
+
         return JSON.stringify(jsonfyPage.filter(n => !n.isPrivate))
     })())
 
@@ -43,6 +48,10 @@ console.log('==============================================')
             }
         })
 
+        console.log('--------------------------------------')
+        console.log('/    ', 'readme.md目录生成成功', '     /')
+        console.log('--------------------------------------')
+
         return string.join('\n')
     })())
 })();
@@ -51,10 +60,24 @@ console.log('==============================================')
     /*自动生成组件库列表相关的文件*/
     const libs = utils.getJsonFiles('src/libs')
     let jsonfyPage = utils.getPagesJson(libs)
+    var regExp = /(\"doc\"):(\"[0-9a-zA-Z\.\/]*\")/ig
 
     /*自动生成data文件*/
-    utils.writeFile('./src/libs/data.json', (function () {
-        return JSON.stringify(jsonfyPage.filter(n => !n.isPrivate))
+    utils.writeFile('./src/libs/data.js', (function () {
+        let context = 'module.exports = '
+
+        context += JSON.stringify(jsonfyPage.filter(n => {
+            if (!n.doc) {
+                n.doc = "../libs/help.md"
+            }
+            return !n.isPrivate
+        }))
+
+        console.log('--------------------------------------')
+        console.log('/    ', '总共检测到组件类' + jsonfyPage.length + '个', '     /')
+        console.log('--------------------------------------')
+
+        return context.replace(regExp, '$1: require($2)')
     })())
 })();
 

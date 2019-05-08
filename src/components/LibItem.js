@@ -14,7 +14,7 @@ Vue.component('LibItem', {
             </h3>
             <section class="lib-doc">
                 <slot></slot>
-                <div v-html="doc"></div>
+                <div v-html="data.doc"></div>
             </section>
         </div>`,
     data() {
@@ -27,15 +27,6 @@ Vue.component('LibItem', {
         data: {
             type: Object,
             required: true
-        }
-    },
-    computed: {
-        doc () {
-            if (this.data.doc) {
-                return require(this.data.doc)
-            } else {
-                return require('@/libs/help.md')
-            }
         }
     },
     methods: {

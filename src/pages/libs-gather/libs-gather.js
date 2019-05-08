@@ -3,8 +3,6 @@ import {getArticleInfo} from '../../assets/js/Utils'
 import '../../components/ArticleRead'
 import '../../components/LibItem'
 
-import {storage} from '../../libs/storage/storage'
-
 const articles = require('../../data.json')
 
 const vue = init()
@@ -14,7 +12,7 @@ export default new vue({
     name: 'markdown',
     data() {
         return {
-            libs: require('@/libs/data.json')
+            libs: require('@/libs/data.js')
         }
     },
     computed: {
@@ -25,8 +23,5 @@ export default new vue({
     mounted() {
         // 移除加载过程隐藏所有元素
         document.body.classList.remove('loading')
-    },
-    created() {
-
     }
 })
