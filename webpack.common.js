@@ -6,9 +6,8 @@ const marked = require('marked')
 const renderer = new marked.Renderer()
 const utils = require('./utils')
 const Info = require('./src/config')
+const generate = require('./generate')
 
-const htmlReg = /\.html$/
-const jsReg = /\.js$/
 const pages = utils.getJsonFiles('src/pages')// 多页面配置新数据
 
 function resolve(dir) {
@@ -19,67 +18,7 @@ console.log('==============================================')
 console.log(process.env.NODE_ENV)
 console.log('==============================================')
 
-;(function () {
-    /*自动生成页面相关的文件*/
-    let jsonfyPage = utils.getPagesJson(pages)
-
-    /*自动生成data文件*/
-    utils.writeFile('./src/data.json', (function () {
-
-        console.log('--------------------------------------')
-        console.log('/    ', '总共检索到' + jsonfyPage.length + '条文章', '     /')
-        console.log('--------------------------------------')
-
-        return JSON.stringify(jsonfyPage.filter(n => !n.isPrivate))
-    })())
-
-
-    /*自动生成readme文件*/
-    utils.writeFile('README.md', (function () {
-        let string
-
-        string = []
-        string.push('### 目录')
-        string.push('+ [首页]('+ Info.host +')')
-
-        jsonfyPage.forEach(n => {
-            if (!n.isPrivate) {
-                string.push('+ ['+ n.name +']('+ Info.host + n.uri +')')
-            }
-        })
-
-        console.log('--------------------------------------')
-        console.log('/    ', 'readme.md目录生成成功', '     /')
-        console.log('--------------------------------------')
-
-        return string.join('\n')
-    })())
-})();
-
-;(function () {
-    /*自动生成组件库列表相关的文件*/
-    const libs = utils.getJsonFiles('src/libs')
-    let jsonfyPage = utils.getPagesJson(libs)
-    var regExp = /(\"doc\"):(\"[0-9a-zA-Z\.\/]*\")/ig
-
-    /*自动生成data文件*/
-    utils.writeFile('./src/libs/data.js', (function () {
-        let context = 'module.exports = '
-
-        context += JSON.stringify(jsonfyPage.filter(n => {
-            if (!n.doc) {
-                n.doc = "../libs/help.md"
-            }
-            return !n.isPrivate
-        }))
-
-        console.log('--------------------------------------')
-        console.log('/    ', '总共检测到组件类' + jsonfyPage.length + '个', '     /')
-        console.log('--------------------------------------')
-
-        return context.replace(regExp, '$1: require($2)')
-    })())
-})();
+generate.exec();
 
 module.exports = {
     entry: (function () {
@@ -89,7 +28,7 @@ module.exports = {
         ret.app = './src/pages/index/index.js'
 
         pages.filter(n => {
-            return jsReg.test(n)
+            return /\.js$/.test(n)
         }).forEach(n => {
             chunk = n.split('\\').pop().split('.').shift()
 
@@ -112,35 +51,67 @@ module.exports = {
             let ret = []
             let name
             let folder
+            let filterRes
+            let cache
 
-            pages.filter(n => {
-                return htmlReg.test(n)
-            }).forEach(n => {
+            filterRes = pages.filter(n => {
+                let tmp
+                let folder
+
+                tmp = n.split('\\')
+                tmp.pop()
+                folder = tmp.pop()
+
+                return new RegExp(folder + '\.html$').test(n) || new RegExp(folder + '\.js$').test(n) || /.md$/.test(n)
+
+            })
+
+            cache = {}
+            filterRes.forEach((n, i) => {
                 let tmp = n.split('\\')
-
+                let tmpFilterRes
+                let template
+                let tpmFolder
                 name = tmp.pop()
                 folder = tmp.pop()
 
-                ret.push(new HtmlWebpackPlugin({
-                    filename: __dirname + '/dist/html/' + name,
-                    template: n,
-                    title: (function () {
-                        if (folder === 'index') {
-                            return ''
-                        }
-                        let config = utils.getFileContent('./src/pages/' + folder + '/config.json')
+                cache[folder] = cache[folder] || []
+                cache[folder].push(n)
 
-                        return config.name + ' | ' + Info.title
-                    })(),
-                    description: Info.description,
-                    chunks: ['common', name.split('.').shift()],
-                    minify:
-                        {
-                            removeComments: true,//删除注释
-                            collapseWhitespace:
-                                true//删除空格
-                        }
-                }))
+                if (!((cache.preFolder === undefined || cache.preFolder === folder) && i < filterRes.length - 1)) {
+
+                    tpmFolder = (i === filterRes.length - 1) ? folder: cache.preFolder
+
+                    tmpFilterRes = cache[tpmFolder].filter(n => /.html$/.test(n))
+                    if (tmpFilterRes.length > 0) {
+                        template = tmpFilterRes[0]
+                    } else {
+                        tmpFilterRes = cache[tpmFolder].filter(n => /.md/.test(n))
+                        template = tmpFilterRes.length > 0 ? __dirname + '/src/template/markdown/template.html': __dirname + '/src/template/html/template.html'
+                    }
+
+                    ret.push(new HtmlWebpackPlugin({
+                        filename: __dirname + '/dist/html/' + tpmFolder + '.html',
+                        template: template,
+                        title: (function () {
+                            if (tpmFolder === 'index') {
+                                return ''
+                            }
+                            let config = utils.getFileContent('./src/pages/' + tpmFolder + '/config.json')
+
+                            return config.name + ' | ' + Info.title
+                        })(),
+                        description: Info.description,
+                        chunks: ['common', tpmFolder],
+                        minify:
+                            {
+                                removeComments: true,//删除注释
+                                collapseWhitespace:
+                                    true//删除空格
+                            }
+                    }))
+                }
+                cache.preFolder = folder
             })
             return ret
         })(),

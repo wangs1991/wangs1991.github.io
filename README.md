@@ -8,5 +8,4 @@
 + [JavaScript词法分析器](https://wangs1991.github.io/dist/html/js-ast-parse.html)
 + [常用插件工具类集合](https://wangs1991.github.io/dist/html/libs-gather.html)
 + [笔记 · 待整理](https://wangs1991.github.io/dist/html/notes.html)
-+ [README](https://wangs1991.github.io/dist/html/readme.html)
 + [webpack 4.0从0构建多页应用打包配置环境详解](https://wangs1991.github.io/dist/html/webpack-multipage.html)
