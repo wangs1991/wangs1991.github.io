@@ -70,7 +70,7 @@ const writeLibs = () => {
 module.exports = {
     exec() {
         wirteData()
-        writeReadme()
         writeLibs()
+        writeReadme()
     }
 }
