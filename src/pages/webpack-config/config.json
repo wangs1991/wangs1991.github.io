@@ -1,0 +1,12 @@
+{
+  "typeId": 1004,
+  "type": "webpack",
+  "keywords": [
+    "webpack",
+    "问题总结"
+  ],
+  "script": true,
+  "title": "webpack 配置问题汇总【Q&A】",
+  "uri": "webpack-config.html",
+  "date": "2019-01-28"
+}

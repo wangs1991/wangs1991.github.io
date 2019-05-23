@@ -6,7 +6,7 @@
     "js词法分析"
   ],
   "script": true,
-  "name": "JavaScript词法分析器",
+  "title": "JavaScript词法分析器",
   "uri": "js-ast-parse.html",
   "date": "2019-03-05"
 }

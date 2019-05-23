@@ -58,7 +58,7 @@ const config = merge(common, {
         }),
         new ExtractTextPlugin({
             filename:  (getPath) => {
-                return getPath('assets/css/[name].[hash].css').replace('css/js', 'css');
+                return getPath('assets/css/[name].[hash].css');
             },
             allChunks: true
         }),

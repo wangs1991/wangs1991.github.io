@@ -47,14 +47,14 @@ $theme-color-2-10: rgba(255, 203, 7, .10); // 金色
 
   &::-webkit-scrollbar-thumb { /*滚动条里面小方块*/
     border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 5px $theme-color-2-70;
-    background: $theme-color-1;
+    //-webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, .1);
+    background: rgba(0, 0, 0, .25);
   }
 
   &::-webkit-scrollbar-track { /*滚动条里面轨道*/
-    -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.2);
+    //-webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
-    background: $theme-color-2-30;
+    background: rgba(0, 0, 0, .05);
   }
 }
 

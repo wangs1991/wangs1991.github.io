@@ -21,18 +21,23 @@ console.log('==============================================')
 generate.exec();
 
 module.exports = {
+    /*
+    * 通过自执行匿名方法，计算多入口文件
+    * 主入口设置成 app.js
+    * 其他页面入口根据页面名称动态定义
+    * */
     entry: (function () {
         let ret = {}
         let chunk
 
-        ret.app = './src/pages/index/index.js'
+        ret.app = './src/pages/index/index.js' // 设置主入口文件是app.js
 
         pages.filter(n => {
-            return /\.js$/.test(n)
+            return /\.js$/.test(n)  // 过滤读取到的pages目录下的所有文件中后缀名为.js的文件
         }).forEach(n => {
-            chunk = n.split('\\').pop().split('.').shift()
+            chunk = n.split('\\').pop().split('.').shift()  // 通过路径读取到文件名称
 
-            ret[chunk] = './' + n
+            ret[chunk] = './' + n   // 设置相关的入口文件
         })
 
         return ret // 返回多个页面入口
@@ -47,13 +52,24 @@ module.exports = {
         }
     },
     plugins: [
-        ...(function () { // 匿名自执行方法遍历页面数据，生成到模块的html文件到dist/html/[name]/name.html
+        /*
+        * 匿名自执行方法遍历页面数据，生成到模块的html文件到dist/html/[name]/name.html
+        * 判断逻辑：判断pages下某个子目录中是否存在html文件：
+        *     如果存在该文件为页面的模板文件；
+        *     如果不存在在判断该目录下是否存在md文件：
+        *           如果存在那么设置模板文件为template/mardown/template.html;
+        *           如果不存在那么设置模板文件为template/html/template.html;
+        * */
+        ...(function () {
             let ret = []
             let name
             let folder
             let filterRes
             let cache
 
+            /*
+            * 过滤获取pages下后缀名为.js、.html、.md的文件
+            * */
             filterRes = pages.filter(n => {
                 let tmp
                 let folder
@@ -62,7 +78,9 @@ module.exports = {
                 tmp.pop()
                 folder = tmp.pop()
 
-                return new RegExp(folder + '\.html$').test(n) || new RegExp(folder + '\.js$').test(n) || /.md$/.test(n)
+                return new RegExp(folder + '\.html$').test(n)
+                        || new RegExp(folder + '\.js$').test(n)
+                        || /.md$/.test(n)
 
             })
 
@@ -75,33 +93,45 @@ module.exports = {
                 name = tmp.pop()
                 folder = tmp.pop()
 
+                /*
+                * 通过cache变量缓存目录数据，和目录下的文件名称
+                * 通过文件路径读取到目录名，和缓存的目录进行比较
+                * 如果当前目录和缓存的目录不同，或者已经读取到最后一个文件了
+                *   那么可以确认某一个文件夹下的所有文件
+                *       再在目录文件中一次查找html文件md文件，完成模板文件的指定
+                * */
                 cache[folder] = cache[folder] || []
                 cache[folder].push(n)
 
-                if (!((cache.preFolder === undefined || cache.preFolder === folder) && i < filterRes.length - 1)) {
+                if (!((cache.preFolder === undefined
+                        || cache.preFolder === folder)
+                        && i < filterRes.length - 1)) {
 
-                    tpmFolder = (i === filterRes.length - 1) ? folder: cache.preFolder
+                    tpmFolder = (i === filterRes.length - 1) ?
+                        folder: cache.preFolder
 
                     tmpFilterRes = cache[tpmFolder].filter(n => /.html$/.test(n))
                     if (tmpFilterRes.length > 0) {
                         template = tmpFilterRes[0]
                     } else {
                         tmpFilterRes = cache[tpmFolder].filter(n => /.md/.test(n))
-                        template = tmpFilterRes.length > 0 ? __dirname + '/src/template/markdown/template.html': __dirname + '/src/template/html/template.html'
+                        template = tmpFilterRes.length > 0 ?
+                            __dirname + '/src/template/markdown/template.html'
+                            : __dirname + '/src/template/html/template.html'
                     }
 
                     ret.push(new HtmlWebpackPlugin({
-                        filename: __dirname + '/dist/html/' + tpmFolder + '.html',
-                        template: template,
+                        filename: __dirname + '/dist/html/' + tpmFolder + '.html',  // 设置输出的html文件位置
+                        template: template,     // 设置模板文件
                         title: (function () {
                             if (tpmFolder === 'index') {
                                 return ''
                             }
                             let config = utils.getFileContent('./src/pages/' + tpmFolder + '/config.json')
 
-                            return config.name + ' | ' + Info.title
+                            return config.title + ' | ' + Info.title  // 动态计算html的title属性
                         })(),
-                        description: Info.description,
+                        description: Info.description,  // 动态计算html的description属性
                         chunks: ['common', tpmFolder],
                         minify:
                             {

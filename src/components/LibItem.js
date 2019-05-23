@@ -6,7 +6,7 @@ Vue.component('LibItem', {
         <div class="lib-item" 
              :class="{'lib-item__open': isExpand}"                        @click="isExpand = !isExpand">
             <h3 class="lib-title">
-                {{data.name}}
+                {{data.title}}
                 <a :href="data.uri"
                     :style="{'background-image': 'url('+ dwicon +')'}"
                     target="_blank" 

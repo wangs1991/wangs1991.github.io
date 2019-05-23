@@ -31,7 +31,7 @@ const writeReadme = () => {
 
         jsonfyPage.forEach(n => {
             if (!n.isPrivate) {
-                string.push('+ [' + n.name + '](' + Info.host + n.uri + ')')
+                string.push('+ [' + n.title + '](' + Info.host + n.uri + ')')
             }
         })
 
