@@ -10,7 +10,7 @@
     webpcak.config.output = {
         filename: '[name].[hash].js',
         path: path.resolve(__dirname, 'dist'),
-        pulicPath: 'http://***.com'
+        publicPath: 'http://***.com'
     }
 ```
 - 局部资源替换
