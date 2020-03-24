@@ -35,7 +35,7 @@ module.exports = {
         pages.filter(n => {
             return /\.js$/.test(n)  // 过滤读取到的pages目录下的所有文件中后缀名为.js的文件
         }).forEach(n => {
-            chunk = n.split('\\').pop().split('.').shift()  // 通过路径读取到文件名称
+            chunk = n.split('/').pop().split('.').shift()  // 通过路径读取到文件名称
 
             ret[chunk] = './' + n   // 设置相关的入口文件
         })
@@ -74,7 +74,7 @@ module.exports = {
                 let tmp
                 let folder
 
-                tmp = n.split('\\')
+                tmp = n.split('/')
                 tmp.pop()
                 folder = tmp.pop()
 
@@ -86,7 +86,7 @@ module.exports = {
 
             cache = {}
             filterRes.forEach((n, i) => {
-                let tmp = n.split('\\')
+                let tmp = n.split('/')
                 let tmpFilterRes
                 let template
                 let tpmFolder

@@ -5,3 +5,14 @@
     git rm -r --cache [目录]
 ```
 
+### git分支管理 - 分支备注
+> git管理项目，会创建太多的分支以增加不同的功能和特性到主线程序。团队协作或者个人项目管理，分支的名字如果不能直观体现分支的作用，后者时间过久总会有忘记分支作用的时候。分支的描述信息能很好的记录分支的信息，起到备忘作用。
+```bash
+    # 增加描述信息
+    git config.branch.branchName.description '子系统分支，增加异地协助认证功能'
+    # 信息查看
+    # 通过 git-br 包快速查看
+    git br
+    # output
+    # branchName description
+```

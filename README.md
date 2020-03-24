@@ -8,3 +8,4 @@
 + [常用插件工具类集合](https://wangs1991.github.io/dist/html/libs-gather.html)
 + [笔记 · 待整理](https://wangs1991.github.io/dist/html/notes.html)
 + [webpack 配置问题汇总【Q&A】](https://wangs1991.github.io/dist/html/webpack-config.html)
++ [微信小程序帮我打开相机好吗？](https://wangs1991.github.io/dist/html/wxapp-build-auth.html)

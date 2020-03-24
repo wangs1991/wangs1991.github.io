@@ -1,0 +1,9 @@
+{
+  "typeId": 1003,
+  "type": "日常总结",
+  "keywords": ["微信小程序"],
+  "script": true,
+  "title": "微信小程序帮我打开相机好吗？",
+  "uri": "wxapp-build-auth.html",
+  "date": "2019-07-24"
+}
